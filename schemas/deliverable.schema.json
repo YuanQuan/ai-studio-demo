@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Studio Deliverable",
+  "type": "object",
+  "required": ["task_id", "owner", "summary", "artifacts", "acceptance_results", "risks", "status"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "owner": {"enum": ["product", "tech_lead", "art", "ui", "vfx", "client", "server", "qa", "master", "producer"]},
+    "summary": {"type": "string", "minLength": 1},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "acceptance_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["criterion", "result", "evidence"],
+        "properties": {
+          "criterion": {"type": "string"},
+          "result": {"enum": ["PASS", "FAIL", "NOT_TESTED"]},
+          "evidence": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["READY_FOR_REVIEW", "BLOCKED", "FAILED"]}
+  },
+  "additionalProperties": false
+}

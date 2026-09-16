@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Game · Producer Dashboard</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#121a2d;--line:#283754;--text:#edf3ff;--muted:#94a6c3;--info:#66d6ff;--ok:#57d39b;--warn:#ffcc66;--danger:#ff7a90}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1400px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.top h1{margin:6px 0;font-size:34px}.muted{color:var(--muted)}
+    .grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(4,1fr);margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.n{font-size:28px;font-weight:800;margin-top:8px}.info{color:var(--info)}.ok{color:var(--ok)}.warn{color:var(--warn)}
+    h2{font-size:18px;margin:0 0 12px}.flow{display:grid;grid-template-columns:repeat(7,minmax(150px,1fr));gap:10px;overflow:auto}.step{border:1px solid var(--line);border-radius:12px;padding:12px;min-width:150px}.step b{display:block;margin-bottom:6px}.step small{color:var(--muted);line-height:1.5}.gate{color:var(--warn);margin-top:7px;font-size:11px}
+    table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;border-top:1px solid var(--line);padding:11px 9px;vertical-align:top}th{color:var(--muted);font-size:10px;text-transform:uppercase}.empty{border:1px dashed #3b506f;border-radius:12px;padding:22px;text-align:center;color:var(--muted)}
+    .two{grid-template-columns:1fr 1fr}.roles{grid-template-columns:repeat(2,1fr)}.role b{display:block;margin-bottom:6px}.role span{color:var(--muted);font-size:12px;line-height:1.6}.footer{margin-top:20px;color:var(--muted);font-size:11px;line-height:1.6}
+    @media(max-width:900px){.stats,.two,.roles{grid-template-columns:1fr 1fr}}@media(max-width:620px){.stats,.two,.roles{grid-template-columns:1fr}.wrap{padding:18px}.top{display:block}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><div class="info">STANDARD MINI GAME TEMPLATE</div><h1>项目流程与进度总览</h1><div class="muted">Producer 维护的静态快照。正式事实源仍是 Task / Artifact / Review / WORKFLOW_STATUS / MILESTONE_LOG / APPROVAL_LOG。</div></div>
+    <div class="muted">项目：TBD<br>模板状态：INITIALIZED</div>
+  </div>
+
+  <div class="grid stats">
+    <div class="card"><div class="muted">正式任务线</div><div class="n info">0</div><small class="muted">尚未创建任务</small></div>
+    <div class="card"><div class="muted">待用户审批</div><div class="n warn">0</div><small class="muted">暂无待确认 Artifact</small></div>
+    <div class="card"><div class="muted">流程阻塞</div><div class="n ok">0</div><small class="muted">暂无 BLOCKED</small></div>
+    <div class="card"><div class="muted">发布目标</div><div class="n">Mini Game</div><small class="muted">Web dev · WeChat · Douyin</small></div>
+  </div>
+
+  <section class="card">
+    <h2>标准功能流转</h2>
+    <div class="flow">
+      <div class="step"><b>01 Product</b><small>总纲 / 模块树 / PRD / Acceptance</small><div class="gate">USER_APPROVED</div></div>
+      <div class="step"><b>02 Visual</b><small>Art Direction / 原画 / UI / VFX</small><div class="gate">Art Review + USER_APPROVED</div></div>
+      <div class="step"><b>03 Tech</b><small>TECH_DESIGN / Contract / Config</small><div class="gate">USER_APPROVED</div></div>
+      <div class="step"><b>04 Dev Pack</b><small>Client/Server Feature Brief + QA Test Plan</small><div class="gate">USER_APPROVED</div></div>
+      <div class="step"><b>05 Implement</b><small>Code / Test / Implementation Report</small><div class="gate">Review</div></div>
+      <div class="step"><b>06 QA</b><small>Client / Server / Visual QA</small><div class="gate">P0/P1 = 0</div></div>
+      <div class="step"><b>07 Done</b><small>Approved result / Master summary</small><div class="gate">Final acceptance</div></div>
+    </div>
+  </section>
+
+  <div class="grid two" style="margin-top:14px">
+    <section class="card"><h2>当前任务线</h2><div class="empty">暂无正式任务。第一条任务创建后，Producer 必须立即登记 Owner、Stage、Artifact 版本/路径、审批、阻塞和下一动作。</div></section>
+    <section class="card"><h2>等待你审批</h2><div class="empty">暂无待审批 Artifact。</div></section>
+  </div>
+
+  <section class="card" style="margin-top:14px">
+    <h2>关键节点追踪</h2>
+    <table><thead><tr><th>Time</th><th>Task</th><th>Owner</th><th>Milestone</th><th>Artifact / Version</th><th>Path</th><th>Status</th></tr></thead><tbody><tr><td colspan="7" class="muted">暂无节点。TASK_STARTED 起必须持续更新，禁止任务结束后一次性补录。</td></tr></tbody></table>
+  </section>
+
+  <section class="card" style="margin-top:14px">
+    <h2>角色与固定产物</h2>
+    <div class="grid roles">
+      <div class="role"><b>Master</b><span>Task Packet · dependency graph · MASTER_SUMMARY</span></div>
+      <div class="role"><b>Producer</b><span>WORKFLOW_STATUS · MILESTONE_LOG · APPROVAL_LOG · Dashboard</span></div>
+      <div class="role"><b>Product</b><span>Product Outline · PRD · Acceptance · Flow · Research</span></div>
+      <div class="role"><b>Art Director</b><span>ART_DIRECTION · ART_BRIEF · 原画 · ASSET_MANIFEST · rationale</span></div>
+      <div class="role"><b>UI</b><span>UI_SPEC · COLOR_SYSTEM · screens · components</span></div>
+      <div class="role"><b>VFX</b><span>VFX_SPEC · references/previews where needed</span></div>
+      <div class="role"><b>Tech Lead</b><span>TECH_DESIGN · REVIEW · config schema/contracts</span></div>
+      <div class="role"><b>Client</b><span>FEATURE_BRIEF · implementation · IMPLEMENTATION_REPORT</span></div>
+      <div class="role"><b>Server</b><span>FEATURE_BRIEF · implementation/migrations/protocol · IMPLEMENTATION_REPORT</span></div>
+      <div class="role"><b>QA</b><span>TEST_PLAN · Client/Server cases · visual evidence · TEST_REPORT · bugs</span></div>
+    </div>
+  </section>
+
+  <div class="footer">Producer update rule: Task creation/start, Artifact draft/review/user approval/rejection, handoff, blocked/unblocked, implementation done, QA start/result and task done are all Dashboard-visible milestones. Every Artifact-bearing milestone must show its real repository path and version.</div>
+</div>
+</body>
+</html>

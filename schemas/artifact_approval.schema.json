@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Artifact Approval Record",
+  "type": "object",
+  "required": ["task_id", "role", "artifact", "version", "status"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "role": {"enum": ["product", "art", "ui", "vfx", "tech_lead", "client", "server", "qa", "master", "producer"]},
+    "artifact": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "status": {"enum": ["DRAFT", "PROFESSIONAL_REVIEW", "USER_REVIEW", "USER_APPROVED", "REJECTED", "SUPERSEDED"]},
+    "review_ref": {"type": ["string", "null"]},
+    "decision_note": {"type": ["string", "null"]},
+    "decided_at": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

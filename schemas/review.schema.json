@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Studio Review",
+  "type": "object",
+  "required": ["task_id", "reviewer", "decision", "findings", "next_action"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "reviewer": {"enum": ["master", "producer", "product", "tech_lead", "art", "ui", "vfx", "client", "server", "qa"]},
+    "decision": {"enum": ["APPROVED", "CHANGES_REQUESTED", "BLOCKED"]},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "message"],
+        "properties": {
+          "severity": {"enum": ["INFO", "MINOR", "MAJOR", "CRITICAL"]},
+          "message": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "next_action": {"type": "string"}
+  },
+  "additionalProperties": false
+}

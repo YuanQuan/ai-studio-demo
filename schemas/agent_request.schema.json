@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Request",
+  "type": "object",
+  "required": ["id", "task_id", "from", "type", "reason", "impact", "recommendation", "status"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string", "minLength": 1},
+    "from": {"enum": ["producer", "product", "tech_lead", "art", "ui", "vfx", "client", "server", "qa"]},
+    "type": {"enum": ["CLARIFICATION", "DEPENDENCY", "CHANGE", "DECISION", "BLOCKER"]},
+    "reason": {"type": "string", "minLength": 1},
+    "options": {"type": "array", "items": {"type": "string"}},
+    "impact": {"type": "string"},
+    "recommendation": {"type": "string"},
+    "status": {"enum": ["OPEN", "APPROVED", "REJECTED", "RESOLVED"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Build / coverage
+build/
+dist/
+coverage/
+
+# Cocos Creator generated/cache directories
+library/
+temp/
+local/
+profiles/
+
+# Misc caches
+.cache/
+.tmp/

@@ -1,0 +1,91 @@
+version: 1
+template_id: standard-mini-game
+template_type: mini_game
+source_repository: YuanQuan/ai-studio-template
+
+platforms:
+  development: web
+  release:
+    - wechat_mini_game
+    - douyin_mini_game
+
+default_stack:
+  client: Cocos Creator + TypeScript
+  server: Node.js + NestJS + TypeScript
+  server_architecture: modular_monolith
+  websocket: ws
+  production_transport: wss
+  protocol: Protobuf
+  database: MySQL
+  cache_runtime: Redis
+  repository: monorepo
+
+copy_files: true
+create_directories:
+  - project/research/comparables
+  - project/research/market
+  - project/research/users
+  - project/research/ip_copyright
+  - project/research/platforms
+  - project/research/misc
+  - project/art_reference/characters
+  - project/art_reference/scenes
+  - project/art_reference/props
+  - project/art_reference/ui
+  - project/art_reference/vfx
+  - project/art_reference/misc
+  - project/config/source
+  - project/config/schema
+  - tasks/backlog
+  - tasks/active
+  - tasks/review
+  - tasks/done
+  - deliverables/product
+  - deliverables/art
+  - deliverables/ui
+  - deliverables/vfx
+  - deliverables/tech_lead
+  - deliverables/client
+  - deliverables/server
+  - deliverables/qa
+  - deliverables/producer
+  - tests/bug_reports
+  - apps/client
+  - apps/server
+  - apps/tools
+  - packages/protocol
+  - packages/shared
+  - packages/client-core
+  - packages/server-core
+  - packages/platform-sdk
+  - tooling
+
+initialize_empty_state:
+  - project/DECISIONS.md
+  - project/WORKFLOW_STATUS.md
+  - project/MILESTONE_LOG.md
+  - project/APPROVAL_LOG.md
+  - project/dashboard/index.html
+
+never_inherit_from_another_game:
+  - approved_prds
+  - numeric_balance
+  - art_style_or_assets
+  - business_message_registry
+  - task_history
+  - approval_history
+  - bug_history
+  - secrets
+  - project_specific_decisions
+
+qa_defaults:
+  client_execution_platform: web
+  wechat_douyin_device_test: explicit_only
+  network_test: explicit_only
+  performance_test: explicit_only
+  broad_regression: explicit_only
+  blocking_severity:
+    - P0
+    - P1
+  carry_allowed:
+    - P2

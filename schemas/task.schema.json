@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Studio Task Packet",
+  "type": "object",
+  "required": ["id", "title", "type", "owner", "objective", "inputs", "deliverables", "acceptance", "dependencies", "status", "approval"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "type": {"enum": ["feature", "bug", "design", "tech", "art", "ui", "vfx", "test", "refactor", "integration", "coordination"]},
+    "owner": {"enum": ["master", "producer", "product", "tech_lead", "art", "ui", "vfx", "client", "server", "qa"]},
+    "parent": {"type": ["string", "null"]},
+    "objective": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "items": {"type": "string"}},
+    "deliverables": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "acceptance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["BACKLOG", "SPEC", "READY", "IN_PROGRESS", "REVIEW", "USER_REVIEW", "REVISION", "INTEGRATION", "QA", "DONE", "BLOCKED", "CANCELLED"]},
+    "approval": {"enum": ["AUTO", "APPROVAL", "REVIEW"]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

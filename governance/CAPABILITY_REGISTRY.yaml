@@ -1,0 +1,50 @@
+version: 1
+policy:
+  direct_user_dialogue: true
+  master_required_for_role_calibration: false
+  user_approval_required_for_self_change: true
+  master_required_for_cross_agent_contract_change: true
+  master_reads_latest_config_before_delegation: true
+  role_capability_is_not_project_decision: true
+
+agents:
+  master:
+    display_name: Studio Master
+    config_root: agents/master
+    calibration_status: baseline
+  producer:
+    display_name: Producer / Workflow Controller Agent
+    config_root: agents/producer
+    calibration_status: calibrated
+  product:
+    display_name: Product Agent
+    config_root: agents/product
+    calibration_status: calibrated
+  tech_lead:
+    display_name: Tech Lead Agent
+    config_root: agents/tech_lead
+    calibration_status: calibrated
+  art:
+    display_name: Art Agent / Art Director
+    config_root: agents/art
+    calibration_status: calibrated
+  ui:
+    display_name: UI Agent
+    config_root: agents/ui
+    calibration_status: needs_user_calibration
+  vfx:
+    display_name: VFX Agent
+    config_root: agents/vfx
+    calibration_status: needs_user_calibration
+  client:
+    display_name: Client Agent
+    config_root: agents/client
+    calibration_status: needs_user_calibration
+  server:
+    display_name: Server Agent
+    config_root: agents/server
+    calibration_status: needs_user_calibration
+  qa:
+    display_name: QA Agent
+    config_root: agents/qa
+    calibration_status: needs_user_calibration

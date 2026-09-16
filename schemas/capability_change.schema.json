@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability Change Proposal",
+  "type": "object",
+  "required": ["id", "agent", "change_type", "summary", "reason", "impact", "user_approval", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "agent": {"type": "string", "enum": ["master", "producer", "product", "tech_lead", "art", "ui", "vfx", "client", "server", "qa"]},
+    "change_type": {"type": "string", "enum": ["ROLE", "CAPABILITY", "CONSTRAINT", "SKILL", "CROSS_AGENT_CONTRACT", "PROJECT_ARCHITECTURE"]},
+    "summary": {"type": "string"},
+    "reason": {"type": "string"},
+    "impact": {"type": "array", "items": {"type": "string"}},
+    "affected_agents": {"type": "array", "items": {"type": "string"}},
+    "user_approval": {"type": "string", "enum": ["PENDING", "APPROVED", "REJECTED"]},
+    "master_sync_required": {"type": "boolean"},
+    "status": {"type": "string", "enum": ["PROPOSED", "APPROVED", "APPLIED", "REJECTED"]}
+  },
+  "additionalProperties": false
+}
