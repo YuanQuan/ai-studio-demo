@@ -1,7 +1,7 @@
 # Studio Configuration — Standard Mini Game
 
 ## Project
-- Name: TBD
+- Name: ai-studio-demo
 - Type: Mini Game
 - Stage: Discovery / Pre-production
 - Target Platforms: Local Web (development/debug), WeChat Mini Game, Douyin Mini Game
@@ -11,6 +11,7 @@
 - Message Encoding: Protobuf
 - Data Layer: MySQL + Redis
 - Repository: Monorepo
+- GitHub Repository: `YuanQuan/ai-studio-demo`
 - Authority Model: critical business state and trusted results are server-authoritative
 - Workflow Mode: APPROVAL
 - Producer: workflow/status/artifact version/user approval source of truth
