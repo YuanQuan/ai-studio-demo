@@ -1,0 +1,31 @@
+{
+  "id": "GAME-001-PRODUCT-OUTLINE",
+  "title": "猫咪合成小游戏产品总纲与模块树",
+  "type": "design",
+  "owner": "product",
+  "parent": null,
+  "objective": "将“类似合成大西瓜但主题改为猫咪”的想法整理为原创猫咪合成休闲小游戏的产品总纲、模块树、MVP边界与后续PRD拆分入口，作为后续视觉、技术与开发阶段的产品语义基础。",
+  "inputs": [
+    "STUDIO.md",
+    "agents/product/PRODUCT_OUTLINE_TEMPLATE.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md",
+    "deliverables/product/GAME-001-PRODUCT-OUTLINE/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "总纲明确核心体验、目标玩家、核心循环、局内长期目标、MVP范围与明确不做项。",
+    "模块树覆盖核心合成玩法、分数与结束状态、基础页面流、本地持久化、新手引导、音画反馈与平台适配，并写明依赖关系。",
+    "关键规则以可继续细化PRD的粒度描述，且明确哪些是v0.1建议默认值、哪些仍可由用户调整。",
+    "不擅自加入付费、复杂养成、社交、多人、活动或服务端玩法。",
+    "猫咪主题与玩法表达保持原创，不复制参考游戏的名称、图形资产、UI布局、音效或具体美术表现。"
+  ],
+  "dependencies": [],
+  "status": "USER_REVIEW",
+  "approval": "APPROVAL",
+  "notes": [
+    "User brief (2026-09-16): 做一个类似合成大西瓜的休闲小游戏，但主题改成猫咪。",
+    "本任务只建立产品总纲和MVP边界；具体数值、碰撞参数、视觉设计、技术实现将在后续已批准任务中细化。"
+  ]
+}
