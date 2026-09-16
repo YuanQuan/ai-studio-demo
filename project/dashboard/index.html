@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ai-studio-demo · Producer Dashboard</title>
   <style>
-    :root{--bg:#0b1020;--panel:#121a2d;--line:#283754;--text:#edf3ff;--muted:#94a6c3;--info:#66d6ff;--ok:#57d39b;--warn:#ffcc66}
+    :root{--bg:#0b1020;--panel:#121a2d;--line:#283754;--text:#edf3ff;--muted:#94a6c3;--info:#66d6ff;--ok:#57d39b;--warn:#ffcc66;--overlay:rgba(3,7,18,.78)}
     *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:1200px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;gap:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(3,1fr);margin:24px 0}.n{font-size:28px;font-weight:800;margin-top:8px}.muted{color:var(--muted)}.info{color:var(--info)}.ok{color:var(--ok)}.warn{color:var(--warn)}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;border-top:1px solid var(--line);padding:11px 9px;vertical-align:top}th{color:var(--muted)}code{color:var(--info)}a{color:var(--info)}
-    @media(max-width:760px){.stats{grid-template-columns:1fr}.top{display:block}}
+    .wrap{max-width:1200px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;gap:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(3,1fr);margin:24px 0}.n{font-size:28px;font-weight:800;margin-top:8px}.muted{color:var(--muted)}.info{color:var(--info)}.ok{color:var(--ok)}.warn{color:var(--warn)}
+    table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;border-top:1px solid var(--line);padding:11px 9px;vertical-align:top}th{color:var(--muted)}code{color:var(--info)}a{color:var(--info);text-decoration:none}a:hover{text-decoration:underline}
+    .artifact{display:flex;flex-wrap:wrap;gap:7px;align-items:center}.artifact-name{font-weight:700}.artifact-path{width:100%;font-size:10px;color:var(--muted);word-break:break-all}.artifact-action{border:1px solid var(--line);background:#17233a;color:var(--text);border-radius:8px;padding:4px 8px;font-size:11px;cursor:pointer}.artifact-action:hover{border-color:var(--info);color:var(--info)}
+    .preview-overlay{display:none;position:fixed;inset:0;z-index:1000;background:var(--overlay);padding:24px}.preview-overlay.open{display:flex;align-items:center;justify-content:center}.preview-panel{width:min(1000px,100%);height:min(82vh,850px);display:flex;flex-direction:column;background:#0e1628;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 22px 80px rgba(0,0,0,.45)}.preview-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:15px 18px;border-bottom:1px solid var(--line)}.preview-head h3{margin:0 0 4px;font-size:16px}.preview-tools{display:flex;gap:8px;flex-shrink:0}.preview-body{flex:1;overflow:auto;padding:18px}.preview-body pre{margin:0;white-space:pre-wrap;word-break:break-word;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#dce8fb}.preview-body img{display:block;max-width:100%;height:auto;margin:auto;border-radius:10px}.preview-body iframe{width:100%;height:100%;border:0;background:#fff}.preview-note{font-size:11px;color:var(--muted)}
+    @media(max-width:760px){.stats{grid-template-columns:1fr}.top{display:block}.preview-overlay{padding:8px}.preview-panel{height:94vh}.preview-head{display:block}.preview-tools{margin-top:10px}}
   </style>
 </head>
 <body>
@@ -28,7 +31,18 @@
     <h2>当前任务线</h2>
     <table>
       <thead><tr><th>Task</th><th>Stage</th><th>Owner</th><th>Artifact</th><th>Version</th><th>User Approval</th><th>Next</th></tr></thead>
-      <tbody><tr><td><code>GAME-001-PRODUCT-OUTLINE</code><br>猫咪合成小游戏产品总纲与模块树</td><td class="warn">USER_REVIEW</td><td>Product</td><td><code>deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md</code></td><td>v0.1</td><td class="warn">PENDING</td><td>用户批准或提出修改；批准后创建核心玩法 PRD</td></tr></tbody>
+      <tbody><tr>
+        <td><code>GAME-001-PRODUCT-OUTLINE</code><br>猫咪合成小游戏产品总纲与模块树</td>
+        <td class="warn">USER_REVIEW</td><td>Product</td>
+        <td>
+          <div class="artifact">
+            <a class="artifact-name" href="https://github.com/YuanQuan/ai-studio-demo/blob/main/deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" target="_blank" rel="noopener">Product Outline v0.1 ↗</a>
+            <button class="artifact-action" type="button" data-preview="deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" data-label="Product Outline v0.1">页面内预览</button>
+            <span class="artifact-path">deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md</span>
+          </div>
+        </td>
+        <td>v0.1</td><td class="warn">PENDING</td><td>用户批准或提出修改；批准后创建核心玩法 PRD</td>
+      </tr></tbody>
     </table>
   </section>
 
@@ -46,11 +60,93 @@
   <section class="card" style="margin-top:14px">
     <h2>最近关键节点</h2>
     <table><thead><tr><th>Time</th><th>Milestone</th><th>Artifact</th><th>Status</th></tr></thead><tbody>
-      <tr><td>2026-09-16 15:23 +08:00</td><td>TASK_CREATED</td><td><code>tasks/active/GAME-001-PRODUCT-OUTLINE.json</code></td><td>APPROVAL</td></tr>
-      <tr><td>2026-09-16 15:23 +08:00</td><td>ARTIFACT_DRAFT</td><td><code>PRODUCT_OUTLINE_v0.1.md</code></td><td>READY_FOR_REVIEW</td></tr>
-      <tr><td>2026-09-16 15:23 +08:00</td><td>USER_REVIEW_OPENED</td><td><code>PRODUCT_OUTLINE_v0.1.md</code></td><td class="warn">PENDING</td></tr>
+      <tr><td>2026-09-16 15:23 +08:00</td><td>TASK_CREATED</td><td><div class="artifact"><a class="artifact-name" href="https://github.com/YuanQuan/ai-studio-demo/blob/main/tasks/active/GAME-001-PRODUCT-OUTLINE.json" target="_blank" rel="noopener">Task Packet ↗</a><button class="artifact-action" type="button" data-preview="tasks/active/GAME-001-PRODUCT-OUTLINE.json" data-label="GAME-001-PRODUCT-OUTLINE Task Packet">页面内预览</button><span class="artifact-path">tasks/active/GAME-001-PRODUCT-OUTLINE.json</span></div></td><td>APPROVAL</td></tr>
+      <tr><td>2026-09-16 15:23 +08:00</td><td>ARTIFACT_DRAFT</td><td><div class="artifact"><a class="artifact-name" href="https://github.com/YuanQuan/ai-studio-demo/blob/main/deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" target="_blank" rel="noopener">Product Outline v0.1 ↗</a><button class="artifact-action" type="button" data-preview="deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" data-label="Product Outline v0.1">页面内预览</button></div></td><td>READY_FOR_REVIEW</td></tr>
+      <tr><td>2026-09-16 15:23 +08:00</td><td>USER_REVIEW_OPENED</td><td><div class="artifact"><a class="artifact-name" href="https://github.com/YuanQuan/ai-studio-demo/blob/main/deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" target="_blank" rel="noopener">Product Outline v0.1 ↗</a><button class="artifact-action" type="button" data-preview="deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md" data-label="Product Outline v0.1">页面内预览</button></div></td><td class="warn">PENDING</td></tr>
     </tbody></table>
   </section>
+
+  <section class="card" style="margin-top:14px">
+    <h2>Artifact 查看规则</h2>
+    <p>Dashboard 中的正式产物使用可读名称展示，并提供仓库超链接。支持的文本、Markdown、JSON、图片等文件同时提供“页面内预览”。</p>
+    <p class="preview-note">若浏览器环境禁止跨域读取，页面内预览可能不可用；“↗”仓库链接始终作为查看入口保留。</p>
+  </section>
 </div>
+
+<div id="previewOverlay" class="preview-overlay" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+  <div class="preview-panel">
+    <div class="preview-head">
+      <div><h3 id="previewTitle">Artifact Preview</h3><div id="previewPath" class="preview-note"></div></div>
+      <div class="preview-tools"><a id="previewExternal" class="artifact-action" target="_blank" rel="noopener">仓库打开 ↗</a><button id="previewClose" class="artifact-action" type="button">关闭</button></div>
+    </div>
+    <div id="previewBody" class="preview-body"><div class="muted">请选择一个 Artifact。</div></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const repo = 'YuanQuan/ai-studio-demo';
+  const branch = 'main';
+  const overlay = document.getElementById('previewOverlay');
+  const title = document.getElementById('previewTitle');
+  const pathEl = document.getElementById('previewPath');
+  const body = document.getElementById('previewBody');
+  const external = document.getElementById('previewExternal');
+  const close = document.getElementById('previewClose');
+  const githubUrl = path => `https://github.com/${repo}/blob/${branch}/${path}`;
+  const rawUrl = path => `https://raw.githubusercontent.com/${repo}/${branch}/${path}`;
+  const textExt = new Set(['md','txt','json','yaml','yml','proto','ts','tsx','js','jsx','css','html','xml','csv','log']);
+  const imageExt = new Set(['png','jpg','jpeg','webp','gif','svg']);
+
+  function closePreview(){ overlay.classList.remove('open'); body.innerHTML = ''; }
+  async function openPreview(path, label){
+    const ext = (path.split('.').pop() || '').toLowerCase();
+    title.textContent = label || path;
+    pathEl.textContent = path;
+    external.href = githubUrl(path);
+    body.innerHTML = '<div class="muted">正在加载预览…</div>';
+    overlay.classList.add('open');
+    try {
+      if (imageExt.has(ext)) {
+        const img = document.createElement('img');
+        img.alt = label || path;
+        img.src = rawUrl(path);
+        body.innerHTML = '';
+        body.appendChild(img);
+        return;
+      }
+      if (ext === 'pdf') {
+        const frame = document.createElement('iframe');
+        frame.src = rawUrl(path);
+        frame.title = label || path;
+        body.innerHTML = '';
+        body.appendChild(frame);
+        return;
+      }
+      if (!textExt.has(ext)) throw new Error('该格式暂不支持页面内预览');
+      const response = await fetch(rawUrl(path), {cache:'no-store'});
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const text = await response.text();
+      const pre = document.createElement('pre');
+      pre.textContent = text;
+      body.innerHTML = '';
+      body.appendChild(pre);
+    } catch (error) {
+      body.innerHTML = '';
+      const message = document.createElement('div');
+      message.className = 'muted';
+      message.textContent = `无法在当前浏览器环境直接预览：${error.message}。请使用右上角“仓库打开”查看。`;
+      body.appendChild(message);
+    }
+  }
+
+  document.querySelectorAll('[data-preview]').forEach(button => {
+    button.addEventListener('click', () => openPreview(button.dataset.preview, button.dataset.label));
+  });
+  close.addEventListener('click', closePreview);
+  overlay.addEventListener('click', event => { if (event.target === overlay) closePreview(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closePreview(); });
+})();
+</script>
 </body>
 </html>
