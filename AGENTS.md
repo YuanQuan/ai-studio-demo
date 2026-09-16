@@ -158,6 +158,18 @@ Master 负责向用户呈现待审批产物与反馈；Producer 负责记录批�
 - Studio 规则更新不得自动改变正在开发中的游戏；已有游戏只有在用户明确要求同步后，经过差异 Review 才能升级 Studio Layer。
 - 单项目经验只有在用户明确确认升级为组织级规则后，才能回写 `ai-studio-template`。
 
-## 12. 最终原则
+## 12. Git 操作必须逐次由用户明确授权
 
-这个项目不是 Agent 群聊系统，而是一个由 Master 负责编排与用户沟通、Producer 负责流程监督与审批门禁、专业 Agent 基于固定 Artifact 协作的虚拟手游开发流水线。Studio 组织能力与具体游戏项目事实必须保持仓库级隔离。
+所有 Studio Repository 与 Game Repository 默认禁止 Agent 自行产生 Git 动作。Agent 可以在用户授权的项目范围内编辑文件和 Artifact，但编辑完成后必须停留在工作区，不得自动执行 Git 或等价远程仓库写操作。
+
+以下动作均要求用户对该次操作明确授权：`init`、clone、remote 配置、add、commit、pull、fetch、push、checkout/switch、branch、merge、rebase、cherry-pick、reset、revert、restore、tag、force-push、history rewrite，以及通过 GitHub API/插件产生等价 commit、branch、文件写入、删除或合并。
+
+授权不得扩大解释：
+- 用户说“commit/提交”不代表允许 push。
+- 用户说“push/推送”不代表允许后续持续自动 push。
+- 用户说“定期同步”不构成自动同步授权。
+- 某个仓库获得授权不代表其他仓库同时获得授权。
+
+## 13. 最终原则
+
+这个项目不是 Agent 群聊系统，而是一个由 Master 负责编排与用户沟通、Producer 负责流程监督与审批门禁、专业 Agent 基于固定 Artifact 协作的虚拟手游开发流水线。Studio 组织能力与具体游戏项目事实必须保持仓库级隔离；Git 历史和远程仓库变化始终由用户显式控制。

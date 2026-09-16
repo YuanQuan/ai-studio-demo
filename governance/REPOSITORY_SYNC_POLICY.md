@@ -121,7 +121,30 @@
 - 执行 Studio Sync 前检查进行中任务是否受影响，并形成可见变更摘要。
 - Project Layer 内容绝不回传模板仓库。
 
-## 7. 不采用自动实时继承
+## 7. Git 操作授权边界
+
+所有 Studio Repository 和 Game Repository 默认禁止 Agent 自行产生任何 Git 动作。文件编辑完成不代表允许进入 Git 历史或远程仓库。
+
+只有用户明确下达对应 Git 指令后，Agent 才能执行该次明确授权范围内的操作，包括但不限于：
+- `git init` / clone / remote 配置；
+- `git add` / commit；
+- pull / fetch / push；
+- checkout / switch / branch；
+- merge / rebase / cherry-pick；
+- reset / revert / restore；
+- tag / force-push / history rewrite；
+- 通过 GitHub API、插件或其他方式产生等价的远程 commit、branch、file write、merge 或删除。
+
+默认工作方式：
+- Agent 可以直接编辑用户授权范围内的项目文件与 Artifact。
+- 编辑后保持工作区状态，不自动 add、commit、push 或同步远端。
+- 不把“定期同步”“仓库已连接”“之前允许过一次 push”解释为持续 Git 授权。
+- 用户说“提交”只授权 commit，不自动包含 push；说“推送”才授权 push；说“拉取/同步远端”才授权 pull/fetch 等对应动作。
+- 需要执行破坏性 Git 操作时，即使用户要求 Git 操作，也必须严格按其明确范围执行，不扩展到其他仓库。
+
+该规则适用于 Master、Producer 和所有专业 Agent，以及父 Studio Repository 和所有 Game Repository。
+
+## 8. 不采用自动实时继承
 
 默认不使用 Git submodule 或“模板 main 一更新，所有游戏自动跟着更新”的方式。
 
