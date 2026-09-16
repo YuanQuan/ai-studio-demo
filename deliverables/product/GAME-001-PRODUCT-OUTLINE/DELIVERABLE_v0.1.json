@@ -1,0 +1,46 @@
+{
+  "task_id": "GAME-001-PRODUCT-OUTLINE",
+  "owner": "product",
+  "summary": "提交猫咪主题物理堆叠/同级合成休闲小游戏的 Product Outline v0.1，定义核心体验、MVP边界、模块地图、模块拆分、后续PRD索引和建议默认值，等待用户审批。",
+  "artifacts": [
+    "deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md"
+  ],
+  "acceptance_results": [
+    {
+      "criterion": "总纲明确核心体验、目标玩家、核心循环、局内长期目标、MVP范围与明确不做项。",
+      "result": "PASS",
+      "evidence": "PRODUCT_OUTLINE_v0.1.md 第1节完整记录游戏目标、核心循环、MVP范围与明确不做项。"
+    },
+    {
+      "criterion": "模块树覆盖核心合成玩法、分数与结束状态、基础页面流、本地持久化、新手引导、音画反馈与平台适配，并写明依赖关系。",
+      "result": "PASS",
+      "evidence": "PRODUCT_OUTLINE_v0.1.md 第3-4节包含9个模块及其依赖、规则、技术和QA关注点。"
+    },
+    {
+      "criterion": "关键规则以可继续细化PRD的粒度描述，且明确哪些是v0.1建议默认值、哪些仍可由用户调整。",
+      "result": "PASS",
+      "evidence": "PRODUCT_OUTLINE_v0.1.md 第5-7节给出后续PRD拆分和待审批默认值。"
+    },
+    {
+      "criterion": "不擅自加入付费、复杂养成、社交、多人、活动或服务端玩法。",
+      "result": "PASS",
+      "evidence": "MVP明确不做项排除付费、广告、Meta、社交、多人、活动和服务端玩法。"
+    },
+    {
+      "criterion": "猫咪主题与玩法表达保持原创，不复制参考游戏的名称、图形资产、UI布局、音效或具体美术表现。",
+      "result": "PASS",
+      "evidence": "产品原则和MVP不做项明确要求建立原创猫咪等级、UI与音画表达。"
+    }
+  ],
+  "assumptions": [
+    "MVP以竖屏、单人、单局无尽模式为默认方向。",
+    "10级猫咪、1-3级投放池、2秒危险线容错均为v0.1建议值，尚未获得用户批准。",
+    "MVP不依赖服务端，最高分与基础设置使用本地持久化。"
+  ],
+  "risks": [
+    "猫咪造型如果与碰撞体差异过大，会损害物理玩法可读性，需要后续 Art 与 Client 联合约束轮廓。",
+    "物理参数、猫咪尺寸和投放概率会显著影响难度与单局时长，需要在核心玩法PRD及原型阶段调优。",
+    "需要持续保持原创视觉和UI表达，避免对参考游戏的受保护表达形成近似复制。"
+  ],
+  "status": "READY_FOR_REVIEW"
+}
