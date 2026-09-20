@@ -1,0 +1,57 @@
+{
+  "task_id": "GAME-002-CORE-GAMEPLAY-PRD",
+  "owner": "product",
+  "summary": "核心玩法 PRD v0.1 与流程说明已完成专业自检，并于2026-09-16获得用户批准；该版本现作为Art Direction与Core Tech Design的正式产品语义输入。", 
+  "artifacts": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_FLOW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {
+      "criterion": "PRD 明确核心玩法所属模块、目标、范围与明确不做项，并保持与已批准 Product Outline v0.1 一致。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第1-2节声明目标、范围与非范围，未扩展MVP商业化、Meta、社交、多人或服务端玩法。"
+    },
+    {
+      "criterion": "PRD 将当前/下一只猫、1-3级随机投放、水平瞄准与释放、投放节流、物理堆叠语义写成可测试规则。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第5-8节定义Current/Next、L1-L3等概率池、aimX边界、释放、0.25秒+排除带双条件节流及物理手感目标。"
+    },
+    {
+      "criterion": "PRD 将1-10级同级合成、最高级处理、三体/同时接触、连续合成与对象消费规则写成无歧义验收条件。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第9节与AC-05至AC-08定义L1-L10、原子消费、三体规则、L10终点及逐步连锁合成。"
+    },
+    {
+      "criterion": "PRD 给出MVP计分规则与初始数值基线，并明确不加入连击倍率。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第10节给出L1+L1到L9+L9的10~2560分值表，并明确投放/碰撞/存活无得分、无Combo倍率。"
+    },
+    {
+      "criterion": "PRD 明确危险线2秒连续容错、警告取消、合成救场、暂停/后台计时语义与Game Over顺序。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第11节及AC-10至AC-13定义82%危险线基线、2秒连续计时、回落清零、合成优先和暂停公平性。"
+    },
+    {
+      "criterion": "FLOW 说明单局主要状态和关键事件顺序，Acceptance 可由后续 Tech/Client/QA 直接追溯。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_FLOW_v0.1.md 给出主流程、Run/Spawn/Danger正交状态、合成顺序、三体与危险恢复示例；PRD含AC-01至AC-14。"
+    },
+    {
+      "criterion": "不擅自加入付费、广告、Meta养成、社交、多人、活动或服务端玩法，也不决定具体物理引擎或UI视觉实现。",
+      "result": "PASS",
+      "evidence": "CORE_GAMEPLAY_PRD_v0.1.md 第2.2、15、17节明确排除这些范围，并将物理引擎、输入手势、视觉与UI布局留给后续专业任务。"
+    }
+  ],
+  "assumptions": [
+    "Product Outline v0.1 中的10级猫咪、L1-L3直接投放池、2秒危险线容错与无连击倍率已随上游Artifact一起获得用户批准。",
+    "L1/L2/L3等概率、0.25秒最小投放锁定、82%危险线位置、尺寸表和合成分值表已随本PRD v0.1获得用户批准，现为正式下游产品输入。",
+    "具体物理系数、碰撞形状实现、引擎与配置字段结构由后续Tech Design决定，但不得改变本PRD的玩家可感知语义。"
+  ],
+  "risks": [
+    "等概率L1-L3和尺寸增长曲线可能导致难度节奏偏快或偏慢，需要原型验证；如需明显调整应产生新PRD版本。",
+    "危险线82%高度与实际顶部投放区需要在Tech/UI阶段联合校验，避免正常投放区与失败检测冲突。",
+    "低弹性、较快稳定的手感目标需要物理原型验证，不同平台时间步实现必须保持规则语义一致。"
+  ],
+  "status": "READY_FOR_REVIEW"
+}

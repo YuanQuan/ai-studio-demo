@@ -95,6 +95,10 @@
 
 Agent 只能推动自己有权限的阶段，Producer 负责审批门禁和状态事实源，具体规则见 `rules/workflow.md` 与 `rules/approval_protocol.md`。
 
+当用户明确授权“继续”“进入下一流程”或等价推进指令后，Master 必须在同一执行周期持续推进所有已授权且无阻塞的任务，直到遇到下一次 `USER_REVIEW`、需要用户决定的重大事项、真实 `BLOCKED`，或任务已经 `DONE`。仅创建/解锁任务、把任务标成 `READY/IN_PROGRESS`、或描述“下一步会做什么”都不是合法停止点。
+
+`IN_PROGRESS` 必须有当前执行证据：Owner 已在本轮实际开始产出或验证 Required Artifact。若尚未真正开始，状态保持 `READY`；若无法继续，必须进入 `BLOCKED` 并记录具体原因。Producer 在每次结束已授权推进前必须执行 continuity check，确认不存在仅以 `READY/IN_PROGRESS` 占位但实际无产出的可继续任务。
+
 任何 Agent 不得仅凭“我做完了”把任务标记为 `DONE`。
 `DONE` 至少需要：
 - 对应交付物已存在。
@@ -120,6 +124,7 @@ Artifact 审批记录必须符合 `schemas/artifact_approval.schema.json`。
 - Product / Art / UI 等允许多轮 Draft/Revision；只有用户批准的最终版本可以正式交付 Tech Lead / Client / Server / QA。
 - Producer 持续维护全部任务线当前状态、关键节点历史、审批记录和 Dashboard；任何角色进入执行后，关键节点及对应 Artifact 版本/真实路径必须持续可视化，用户可随时查询当前所有任务线和历史流转。
 - 公共游戏配置表由 Tech Lead 负责结构/校验规范、Product 负责玩法语义和数值内容，统一遵守 `project/config/README.md`。
+- 凡需用户审批的文档型 Artifact 默认以中文为主要表达语言；仅代码、路径、接口/字段名、固定状态枚举与必要专有名词保留英文。模板、正式交付文档和 Review 文档均遵守该规则，除非用户明确要求其他语言。
 影响跨角色或项目级的能力变更提案必须符合 `schemas/capability_change.schema.json`，并遵循 `governance/capability_change_protocol.md`。
 
 ## 8. 不允许静默扩大需求
@@ -155,8 +160,9 @@ Master 负责向用户呈现待审批产物与反馈；Producer 负责记录批�
 - `YuanQuan/ai-studio-template` 只保存可跨游戏复用的 Studio Layer：`AGENTS.md`、`agents/`、`rules/`、`schemas/`、`governance/` 和标准小游戏项目模板。
 - `STUDIO.md`、`project/`、`tasks/`、`deliverables/`、`client/`、`server/`、`tests/` 以及具体游戏需求、资产、代码、技术选型、任务状态和审批历史属于 Project Layer，只进入对应游戏仓库。
 - 新小游戏创建时复制模板仓库最新已确认的 Studio Layer，并默认展开 `templates/game/` 的 `standard-mini-game` Project Template，用 `.studio-lock.json` 锁定模板 ID 与来源 commit。
-- Studio 规则更新不得自动改变正在开发中的游戏；已有游戏只有在用户明确要求同步后，经过差异 Review 才能升级 Studio Layer。
-- 单项目经验只有在用户明确确认升级为组织级规则后，才能回写 `ai-studio-template`。
+- Studio 规则更新通常不得自动改变正在开发中的其他游戏；已有游戏只有在用户明确要求同步后，经过差异 Review 才能升级 Studio Layer。
+- **组织级规则变更的当前项目双同步例外**：当用户在某个当前游戏中明确要求修改 Workflow、Agent 职责/约束、审批/Artifact Gate、Artifact Contract、用户审批文档格式/语言规范、跨角色治理或仓库同步规则时，除非用户明确限定“仅当前项目”，默认视为组织级变更。Master 必须在同一轮同时更新当前 Game Repository 的对应 Studio Layer 快照、`YuanQuan/ai-studio-template` 主 Studio Layer，以及 `templates/game/` 中受影响的标准项目模板默认项，使未来新游戏继承最新规则。其他已经存在但未参与本次变更的游戏仍保持 pinned，不自动改写。
+- 单项目玩法/技术/视觉经验仍只有在用户明确确认升级为组织级规则后才能回写 `ai-studio-template`；但用户明确提出的流程、职责、交付规范与治理修改按上一条默认双同步规则处理。
 
 ## 12. Git 操作必须逐次由用户明确授权
 

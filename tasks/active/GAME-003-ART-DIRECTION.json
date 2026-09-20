@@ -1,0 +1,47 @@
+{
+  "id": "GAME-003-ART-DIRECTION",
+  "title": "猫咪合成小游戏主体美术方向与10级猫咪视觉体系",
+  "type": "art",
+  "owner": "art",
+  "parent": null,
+  "objective": "基于已获用户批准的 Product Outline v0.1 与 Core Gameplay PRD v0.1，建立原创猫咪合成小游戏的主体 Art Direction，定义10级猫咪的视觉递进、轮廓/尺寸可读性、场景/棋盘基调、UI/VFX视觉语言边界与后续资产生产规范，同时保持与玩法碰撞公平性和移动端可读性一致。",
+  "inputs": [
+    "deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_FLOW_v0.1.md",
+    "project/APPROVAL_LOG.md",
+    "agents/art/ROLE.md",
+    "agents/art/CAPABILITIES.md",
+    "agents/art/CONSTRAINTS.md",
+    "agents/art/DECISIONS.md",
+    "agents/art/ART_DIRECTION_TEMPLATE.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/art/GAME-003-ART-DIRECTION/ART_DIRECTION_v0.1.md",
+    "deliverables/art/GAME-003-ART-DIRECTION/ART_BRIEF_v0.1.md",
+    "deliverables/art/GAME-003-ART-DIRECTION/ASSET_MANIFEST_v0.1.md",
+    "deliverables/art/GAME-003-ART-DIRECTION/characters/CAT_TIER_SYSTEM_CONCEPT_v0.1.svg",
+    "deliverables/art/GAME-003-ART-DIRECTION/scenes/PLAYFIELD_MOOD_v0.1.svg",
+    "deliverables/art/GAME-003-ART-DIRECTION/ui_concept/HUD_VISUAL_DIRECTION_v0.1.svg",
+    "deliverables/art/GAME-003-ART-DIRECTION/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "Art Direction 明确3-7个主体视觉关键词、设计理由、禁止偏离项和长期一致性规则，并保持原创猫咪主题，不复制参考游戏的受保护视觉表达。",
+    "10级猫咪建立清晰视觉递进：每级在轮廓、体积感、识别特征上可区分，并与已批准PRD的尺寸基线兼容；不得因装饰造成明显视觉碰撞体错觉。",
+    "建立棋盘/场景、UI视觉、VFX视觉的共同语言和允许变化范围，使后续UI/VFX可在同一主体风格下工作。",
+    "ART_BRIEF 与 ASSET_MANIFEST 明确首批概念资产的用途、状态、格式与生产边界，并区分概念稿和最终可集成资产。",
+    "至少提供10级猫咪体系概念、棋盘氛围概念和HUD视觉方向概念三类可查看视觉产物；所有视觉产物在用户批准前均不得作为最终生产资产。",
+    "视觉方向不得改变已批准的核心玩法规则、UI交互语义或技术Contract。"
+  ],
+  "dependencies": [
+    "GAME-002-CORE-GAMEPLAY-PRD"
+  ],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "Dependency satisfied: Core Gameplay PRD v0.1 explicitly approved by user on 2026-09-16.",
+    "Art Direction v0.1 已于 2026-09-17 获用户明确批准，现可作为 UI/VFX/Client 的正式视觉输入。",
+    "涉及视觉图稿时必须按角色/场景/UI概念分类归档，不使用单一总图冒充全部资产类型。"
+  ]
+}

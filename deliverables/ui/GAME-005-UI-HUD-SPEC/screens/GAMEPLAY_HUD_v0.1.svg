@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <rect width="720" height="1280" fill="#FFF3DE"/>
+  <rect x="56" y="170" width="608" height="1010" rx="38" fill="#F7E5C8" stroke="#D9A66F" stroke-width="18"/>
+  <text x="360" y="44" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#5B4A42">核心玩法 HUD 概念 v0.1</text>
+  <rect x="50" y="76" width="132" height="92" rx="24" fill="#FFF9EF" stroke="#5B4A42" stroke-width="4"/>
+  <text x="116" y="103" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#4A3D38">下一只</text>
+  <circle cx="116" cy="137" r="23" fill="#F2B36D" stroke="#5B4A42" stroke-width="4"/>
+  <path d="M99 120 L105 104 L113 120 M119 120 L127 104 L133 121" fill="#F2B36D" stroke="#5B4A42" stroke-width="4" stroke-linejoin="round"/>
+  <text x="360" y="103" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#5B4A42">分数</text>
+  <text x="360" y="146" text-anchor="middle" font-family="sans-serif" font-size="42" font-weight="700" fill="#4A3D38">1280</text>
+  <circle cx="628" cy="122" r="40" fill="#FFF9EF" stroke="#5B4A42" stroke-width="4"/>
+  <rect x="613" y="104" width="10" height="36" rx="4" fill="#5B4A42"/>
+  <rect x="633" y="104" width="10" height="36" rx="4" fill="#5B4A42"/>
+  <text x="360" y="204" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42" opacity="0.65">Current 投放区</text>
+  <line x1="360" y1="245" x2="360" y2="365" stroke="#85C9B8" stroke-width="4" stroke-dasharray="10 10" opacity="0.7"/>
+  <circle cx="360" cy="244" r="38" fill="#F9D49A" stroke="#5B4A42" stroke-width="5"/>
+  <path d="M330 220 L338 197 L350 220 M370 220 L382 197 L390 222" fill="#F9D49A" stroke="#5B4A42" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="347" cy="245" r="4" fill="#5B4A42"/><circle cx="373" cy="245" r="4" fill="#5B4A42"/>
+  <path d="M356 256 Q360 261 364 256" fill="none" stroke="#5B4A42" stroke-width="3"/>
+  <line x1="74" y1="356" x2="646" y2="356" stroke="#F16F67" stroke-width="5" stroke-dasharray="14 12"/>
+  <rect x="510" y="329" width="112" height="44" rx="20" fill="#FFF9EF" stroke="#F16F67" stroke-width="3"/>
+  <text x="566" y="357" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#F16F67">危险线</text>
+  <g>
+    <circle cx="235" cy="1040" r="66" fill="#9BC9C1" stroke="#5B4A42" stroke-width="6"/><path d="M185 1000 L200 966 L216 1003 M254 1001 L272 966 L286 1006" fill="#9BC9C1" stroke="#5B4A42" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="205" cy="1042" r="5" fill="#5B4A42"/><circle cx="262" cy="1042" r="5" fill="#5B4A42"/><path d="M228 1055 Q235 1062 242 1055" fill="none" stroke="#5B4A42" stroke-width="4"/>
+    <circle cx="383" cy="1065" r="86" fill="#C7A1C9" stroke="#5B4A42" stroke-width="6"/><path d="M319 1008 L339 970 L355 1014 M412 1011 L432 969 L450 1018" fill="#C7A1C9" stroke="#5B4A42" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="355" cy="1063" r="5" fill="#5B4A42"/><circle cx="411" cy="1063" r="5" fill="#5B4A42"/>
+    <circle cx="510" cy="1098" r="54" fill="#F2B36D" stroke="#5B4A42" stroke-width="6"/><path d="M470 1063 L482 1034 L495 1065 M525 1064 L539 1034 L551 1069" fill="#F2B36D" stroke="#5B4A42" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+  <rect x="184" y="1197" width="352" height="52" rx="24" fill="#FFF9EF" opacity="0.92"/>
+  <text x="360" y="1229" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#5B4A42">按住 / 拖动瞄准 · 松手释放</text>
+  <text x="360" y="1266" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#5B4A42" opacity="0.65">示意稿：布局与视觉方向，不代表最终运行像素</text>
+</svg>

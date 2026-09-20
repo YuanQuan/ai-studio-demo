@@ -1,0 +1,52 @@
+{
+  "id": "GAME-009-CLIENT-CORE-IMPLEMENTATION",
+  "title": "核心玩法客户端领域逻辑实现 v0.1",
+  "type": "implementation",
+  "owner": "client",
+  "parent": null,
+  "objective": "基于已批准的 Core Gameplay PRD、Core Tech Design、UI/VFX 规格、Client Feature Brief 与 QA Test Plan，实现可独立类型检查和自动验证的 TypeScript 核心玩法领域层，覆盖投放队列、合成、防重复消费、计分、危险线、暂停/重开与 Debug 可观测性，并建立 Cocos 2D Physics / UI / VFX 的明确适配接口。当前仓库不存在 Cocos Creator 工程骨架，因此本任务不得虚报 Scene/Prefab/Physics 引擎接线已完成。",
+  "inputs": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/TECH_DESIGN_v0.1.md",
+    "project/UI_SPEC.md",
+    "deliverables/vfx/GAME-006-VFX-SPEC/VFX_SPEC_v0.1.md",
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/FEATURE_BRIEF_v0.1.md",
+    "tests/TEST_PLAN.md",
+    "agents/client/ROLE.md",
+    "agents/client/CAPABILITIES.md",
+    "agents/client/CONSTRAINTS.md",
+    "agents/client/DECISIONS.md"
+  ],
+  "deliverables": [
+    "client/assets/game/core/",
+    "client/assets/game/physics/PhysicsFacade.ts",
+    "client/assets/game/debug/DebugHarness.ts",
+    "client/tests/core-gameplay.test.ts",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/IMPLEMENTATION_REPORT_v0.1.md",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/TECH_REVIEW_v0.1.md",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "核心 TypeScript 代码通过类型检查，不依赖 Server/网络/数据库或大型第三方运行时库。",
+    "GameplayConfig 对 L1-L10、L1-L3 投放权重、分值、0.25秒投放锁、0.82危险线和2秒超时提供集中校验。",
+    "SpawnController 实现 Current/Next、合法 aimX、0.25秒+排除带双条件解锁与固定 Seed/强制 Next 调试入口。",
+    "MergeResolver 使用稳定 pair 排序与 consumedThisStep 语义，覆盖同级、异级、L10、三体、四体和连续合成的领域规则。",
+    "ScoreSystem、DangerSystem、GameplaySession 实现已批准的计分、合成救场优先、Game Over、暂停/后台冻结和 Restart 规则。",
+    "DebugHarness 可记录 step、runtimeId、候选/选中 pair、消费对象、danger/drop lock 等 QA 所需证据。",
+    "自动测试覆盖 AC-01 至 AC-14 中可由领域层验证的规则，并明确实际 Cocos Physics/Scene/Prefab/视觉集成仍待后续接线验证。",
+    "实现完成后提交中文 IMPLEMENTATION_REPORT 与 Tech Lead Review，并在用户确认前不进入正式最终 QA。"
+  ],
+  "dependencies": [
+    "GAME-005-UI-HUD-SPEC",
+    "GAME-006-VFX-SPEC",
+    "GAME-007-CLIENT-CORE-FEATURE-BRIEF",
+    "GAME-008-QA-CORE-TEST-PLAN"
+  ],
+  "status": "DONE",
+  "approval": "USER_APPROVED",
+  "notes": [
+    "四个开发开工 Gate 已于 2026-09-17 获用户批准。",
+    "当前机器未发现可用 Cocos Creator 命令行/工程环境，且 client/ 尚无 Cocos 工程元数据；本任务先完成可验证核心领域实现和适配 Contract，不虚报引擎集成。",
+    "领域实现已完成：TypeScript strict typecheck PASS；自动测试 16/16 PASS；Tech Lead Review PASS，进入 USER_REVIEW。"
+  ]
+}

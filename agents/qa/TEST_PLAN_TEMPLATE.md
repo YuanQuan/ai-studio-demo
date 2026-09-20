@@ -1,46 +1,46 @@
-# QA Test Plan Template
+# QA 测试计划模板
 
-## Task / Requirement
-- Task ID:
-- Approved PRD / Acceptance version:
-- Approved Art / UI / VFX artifacts (if applicable):
-- Tech Design / Client / Server Feature Brief references:
+## 任务 / 需求
+- Task ID：
+- 已批准 PRD / Acceptance 版本：
+- 已批准 Art / UI / VFX Artifact（如适用）：
+- Tech Design / Client / Server Feature Brief 引用：
 
-## Scope
-### Client / Target Platform
-- Target platform / environment:
-- Functional areas to test:
-- UI states to test:
-- Visual checkpoints:
+## 测试范围
+### 客户端 / 目标平台
+- 目标平台 / 环境：
+- 需要测试的功能区域：
+- 需要测试的 UI 状态：
+- 视觉检查点：
 
-### Server
-- APIs / messages / business rules to test:
-- Persistence / reward / state changes to verify:
+### 服务端
+- 需要测试的 API / message / 业务规则：
+- 需要验证的持久化 / 奖励 / 状态变化：
 
-## Out of Scope by Default
-Unless explicitly requested by the user/task:
-- Any platform/environment not listed in Scope
-- Network / weak-network / reconnect testing
-- Performance / memory / load testing
-- Broad regression testing outside the changed feature
+## 默认不包含范围
+除非用户或当前 Task 明确要求：
+- 未在测试范围中列出的平台/环境
+- 网络 / 弱网 / 重连测试
+- 性能 / 内存 / 压力测试
+- 与本次变更无关的广泛回归测试
 
-## Test Cases to Prepare
+## 需要准备的测试用例
 - `CLIENT_TEST_CASES.md`
 - `SERVER_TEST_CASES.md`
-- Visual checkpoints/evidence where applicable
+- 适用时的视觉检查点 / 证据
 
-## Visual QA Plan
-- Fixed target viewport / resolution / device profile:
-- Required UI states:
-- Reference artifact paths:
-- Screenshot checkpoints:
-- VFX fixed trigger / camera / key timestamps:
-- Manual reviewer: Art / UI / VFX as applicable
+## Visual QA 计划
+- 固定目标视口 / 分辨率 / 设备档案：
+- 必测 UI 状态：
+- 参考 Artifact 路径：
+- 截图检查点：
+- VFX 固定触发条件 / 镜头 / 关键时间点：
+- 人工评审角色：Art / UI / VFX（按适用范围）
 
-## Release Gate
-- P0: must be 0
-- P1: must be 0
-- P2: may carry to next version but must be listed in `TEST_REPORT.md`
+## 发布门禁
+- P0：必须为 0
+- P1：必须为 0
+- P2：允许带入下一版本，但必须列入 `TEST_REPORT.md`
 
-## Open Risks / Explicit Exclusions
+## 未决风险 / 明确排除项
 - 

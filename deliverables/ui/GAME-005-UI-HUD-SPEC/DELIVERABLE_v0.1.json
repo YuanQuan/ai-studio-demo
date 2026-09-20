@@ -1,0 +1,23 @@
+{
+  "task_id": "GAME-005-UI-HUD-SPEC",
+  "owner": "ui",
+  "summary": "提交核心玩法HUD与交互UI规格v0.1，定义Next/Score/Pause、危险线、瞄准释放手势、关键组件状态、安全区和适配，并提供页面与组件SVG概念稿；Art视觉一致性Review通过，等待用户审批。",
+  "artifacts": [
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/UI_SPEC_v0.1.md",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/COLOR_SYSTEM_v0.1.md",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/screens/GAMEPLAY_HUD_v0.1.svg",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/components/HUD_COMPONENT_STATES_v0.1.svg",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/ART_REVIEW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {"criterion":"明确核心玩法屏的信息层级、区域布局、Current/Next、分数、暂停和危险线关系。","result":"PASS","evidence":"UI_SPEC_v0.1.md 第2-4节及 GAMEPLAY_HUD_v0.1.svg。"},
+    {"criterion":"明确瞄准与释放的交互语义、输入冲突、DROP_LOCKED反馈和Game Over后的输入禁用。","result":"PASS","evidence":"UI_SPEC_v0.1.md 第5节。"},
+    {"criterion":"覆盖SAFE/WARNING、AIMING/DROP_LOCKED、暂停与禁用等关键状态。","result":"PASS","evidence":"UI_SPEC_v0.1.md 第5-6节与 HUD_COMPONENT_STATES_v0.1.svg。"},
+    {"criterion":"定义9:16竖屏安全区、横向边界、顶部投放区与HUD避让规则。","result":"PASS","evidence":"UI_SPEC_v0.1.md 第4与第8节。"},
+    {"criterion":"提供关键页面概念与组件状态概念，视觉遵循已批准Art Guide。","result":"PASS","evidence":"两张SVG概念稿与 ART_REVIEW_v0.1.md，Art Review PASS。"},
+    {"criterion":"通过Art视觉一致性Review后进入用户审批，不改变核心玩法规则或客户端技术框架。","result":"PASS","evidence":"ART_REVIEW_v0.1.md 结论PASS；规格仅定义UI意图与表现。"}
+  ],
+  "assumptions": ["9:16为设计基准，实际安全区与playable bounds由运行时提供。","首页/结算页最终UI不属于本任务。"],
+  "risks": ["真实设备安全区可能压缩顶部HUD，需要Client实现时按Insets动态布局。","Pointer释放手势需要避免与Pause等按钮区域冲突。"],
+  "status": "READY_FOR_REVIEW"
+}

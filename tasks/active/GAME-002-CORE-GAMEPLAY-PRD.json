@@ -1,0 +1,43 @@
+{
+  "id": "GAME-002-CORE-GAMEPLAY-PRD",
+  "title": "猫咪合成小游戏核心玩法 PRD",
+  "type": "design",
+  "owner": "product",
+  "parent": null,
+  "objective": "基于已获用户批准的 Product Outline v0.1，将投放、随机生成、物理行为语义、同级合成、连锁合成、计分、危险线与 Game Over 规则细化为可实现、可测试、可供后续 Art/Tech/UI/Client/QA 消费的核心玩法 PRD。",
+  "inputs": [
+    "deliverables/product/GAME-001-PRODUCT-OUTLINE/PRODUCT_OUTLINE_v0.1.md",
+    "project/APPROVAL_LOG.md",
+    "agents/product/ROLE.md",
+    "agents/product/CAPABILITIES.md",
+    "agents/product/CONSTRAINTS.md",
+    "agents/product/DECISIONS.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_FLOW_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "PRD 明确核心玩法所属模块、目标、范围与明确不做项，并保持与已批准 Product Outline v0.1 一致。",
+    "PRD 将当前/下一只猫、1-3级随机投放、水平瞄准与释放、投放节流、物理堆叠语义写成可测试规则。",
+    "PRD 将1-10级同级合成、最高级处理、三体/同时接触、连续合成与对象消费规则写成无歧义验收条件。",
+    "PRD 给出MVP计分规则与初始数值基线，并明确不加入连击倍率。",
+    "PRD 明确危险线2秒连续容错、警告取消、合成救场、暂停/后台计时语义与Game Over顺序。",
+    "FLOW 说明单局主要状态和关键事件顺序，Acceptance 可由后续 Tech/Client/QA 直接追溯。",
+    "不擅自加入付费、广告、Meta养成、社交、多人、活动或服务端玩法，也不决定具体物理引擎或UI视觉实现。"
+  ],
+  "dependencies": [
+    "GAME-001-PRODUCT-OUTLINE"
+  ],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "Dependency satisfied: Product Outline v0.1 explicitly approved by user on 2026-09-16.",
+    "本任务只细化核心玩法产品语义；具体物理引擎、组件架构、UI布局、猫咪视觉设计和平台SDK实现留给后续专业任务。",
+    "PRD内标记为初始调优基线的物理/尺寸参数只定义产品目标与可接受调优方式，不替代Tech Design与运行时配置结构。",
+    "User approved Core Gameplay PRD v0.1 on 2026-09-16; downstream Art Direction and Core Tech Design are unlocked."
+
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "task_id": "GAME-007-CLIENT-CORE-FEATURE-BRIEF",
+  "owner": "client",
+  "summary": "提交客户端核心玩法开工概要v0.1，明确实现范围、Cocos模块/场景结构、物理/合成/时间/配置边界、性能关注、DebugHarness与开工Gate；Tech Lead Review通过，等待用户审批。",
+  "artifacts": [
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/FEATURE_BRIEF_v0.1.md",
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/TECH_REVIEW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {"criterion":"明确首个可玩版本的客户端实现范围与明确不做项，不提前引入服务端或未批准Meta系统。","result":"PASS","evidence":"FEATURE_BRIEF_v0.1.md 第1节。"},
+    {"criterion":"实现结构映射已批准Tech Design模块，避免物理回调直接合成、UI/VFX回写核心状态或平台API污染玩法。","result":"PASS","evidence":"FEATURE_BRIEF_v0.1.md 第3-5、7节；TECH_REVIEW_v0.1.md PASS。"},
+    {"criterion":"明确Cocos场景/节点/组件、配置、调试入口与后续UI/VFX资源接入点。","result":"PASS","evidence":"FEATURE_BRIEF_v0.1.md 第3、4、6、9节。"},
+    {"criterion":"明确性能关注项、GC/节点/粒子/Update风险与第一版验证方式。","result":"PASS","evidence":"FEATURE_BRIEF_v0.1.md 第8、10节。"},
+    {"criterion":"声明UI/VFX正式视觉实现必须等待对应用户批准，但核心模块开工包本身可先审批。","result":"PASS","evidence":"FEATURE_BRIEF_v0.1.md 第5与第11节。"},
+    {"criterion":"通过Tech Lead Review后进入用户审批；未获用户批准前不得开始正式编码。","result":"PASS","evidence":"TECH_REVIEW_v0.1.md PASS；开工Gate明确。"}
+  ],
+  "assumptions": ["当前client尚未初始化具体Cocos业务工程，正式编码任务会先确认项目结构与Cocos版本。"],
+  "risks": ["Cocos具体版本的2D Physics API可能与概念命名不同，需要通过PhysicsFacade适配。"],
+  "status": "READY_FOR_REVIEW"
+}

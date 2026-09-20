@@ -1,0 +1,45 @@
+{
+  "id": "GAME-004-CORE-TECH-DESIGN",
+  "title": "猫咪合成小游戏核心玩法技术设计",
+  "type": "tech",
+  "owner": "tech_lead",
+  "parent": null,
+  "objective": "基于已获用户批准的 Core Gameplay PRD v0.1，在当前 Cocos Creator + TypeScript 项目基线下设计核心玩法技术方案，明确物理模拟、投放、合成结算、防重复消费、危险线计时、配置结构、事件边界、暂停/后台语义、调试能力与跨平台一致性策略，并保持MVP纯客户端核心玩法的最小必要复杂度。",
+  "inputs": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_FLOW_v0.1.md",
+    "project/ARCHITECTURE.md",
+    "project/DECISIONS.md",
+    "project/config/README.md",
+    "project/APPROVAL_LOG.md",
+    "agents/tech_lead/ROLE.md",
+    "agents/tech_lead/CAPABILITIES.md",
+    "agents/tech_lead/CONSTRAINTS.md",
+    "agents/tech_lead/DECISIONS.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/TECH_DESIGN_v0.1.md",
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/REVIEW_v0.1.md",
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "TECH_DESIGN 将核心玩法拆成边界清晰的模块，并说明依赖方向，避免物理、合成、计分、危险线、UI输入和平台API相互污染。",
+    "明确满足PRD的2D物理方案、固定/半固定更新策略和跨帧率一致性原则，并给出低弹性、稳定堆叠目标的参数调优入口，而不擅自改变产品数值。",
+    "明确合成候选收集、确定性配对、源对象最多消费一次、新生成对象参与后续结算和连续合成的执行顺序，可直接覆盖三体/四体同时接触场景。",
+    "明确Current/Next队列、0.25秒+投放排除带解锁、危险线2秒连续计时、暂停/后台冻结与Game Over顺序的技术状态模型。",
+    "设计公共玩法配置结构及校验规则，承载等级尺寸、投放权重、合成得分、危险线和调优参数；Product批准的数值作为内容输入，Tech只负责结构与校验。",
+    "明确核心玩法事件接口、调试/可重复随机种子或等价测试入口、日志/诊断点和后续QA可观测性。",
+    "MVP不引入不必要的服务端、网络、数据库或大型第三方依赖；如需偏离当前项目架构基线，必须形成明确Change Proposal而非静默生效。"
+  ],
+  "dependencies": [
+    "GAME-002-CORE-GAMEPLAY-PRD"
+  ],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "Dependency satisfied: Core Gameplay PRD v0.1 explicitly approved by user on 2026-09-16.",
+    "Art Direction 与 Core Tech Design 可并行推进；Tech Design 对碰撞轮廓约束使用产品语义和接口占位，不提前消费未批准的Art Draft。",
+    "Core Tech Design v0.1 已于 2026-09-17 获用户明确批准；正式编码仍需等待相关 UI/VFX 与 Client/QA 开工包按流程批准。"
+  ]
+}

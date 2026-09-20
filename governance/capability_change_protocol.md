@@ -39,5 +39,7 @@ Master 不维护角色配置副本。Master 在创建或分派正式任务前必
 3. 读取项目正式决策和规范。
 4. 若角色偏好与项目决定冲突，以用户最新明确指令和项目正式决定为准，并记录冲突。
 
+当用户在某个当前 Game Repository 中明确修改 Agent 的长期职责、约束或跨角色工作方式时，除非用户明确限定“仅当前项目”，该变更同时视为 Studio 级职责变更：本轮必须同步修改当前游戏的对应 Studio Layer 快照与 `YuanQuan/ai-studio-template` 主 Studio Layer。若该职责变化影响 `standard-mini-game` 的默认工作方式，还必须同步更新 `templates/game/` 中相应默认项。该文件级同步不自动授权 Git commit/push，也不自动改写其他既有游戏。
+
 ## E. 校准状态
 当用户完成一次角色能力确认后，应把该 Agent 在 `CAPABILITY_REGISTRY.yaml` 中的 `calibration_status` 从 `needs_user_calibration` 更新为 `calibrated`。重大能力变化后可暂时改为 `recalibration_needed`。

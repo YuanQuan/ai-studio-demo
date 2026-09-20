@@ -1,0 +1,41 @@
+{
+  "id": "GAME-005-UI-HUD-SPEC",
+  "title": "核心玩法 HUD 与交互 UI 规格",
+  "type": "ui",
+  "owner": "ui",
+  "parent": null,
+  "objective": "基于已批准的核心玩法 PRD、Art Direction 与技术边界，定义竖屏核心玩法的 HUD 信息层级、Current/Next、分数、危险线、暂停入口、瞄准/释放交互、组件状态、安全区与适配规则，并形成可供 Client/QA 消费的 UI 规格与概念稿。",
+  "inputs": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "project/ART_GUIDE.md",
+    "project/ARCHITECTURE.md",
+    "agents/ui/ROLE.md",
+    "agents/ui/CAPABILITIES.md",
+    "agents/ui/CONSTRAINTS.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/UI_SPEC_v0.1.md",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/COLOR_SYSTEM_v0.1.md",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/screens/GAMEPLAY_HUD_v0.1.svg",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/components/HUD_COMPONENT_STATES_v0.1.svg",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/ART_REVIEW_v0.1.md",
+    "deliverables/ui/GAME-005-UI-HUD-SPEC/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "明确核心玩法屏的信息层级、区域布局、Current/Next、分数、暂停和危险线关系。",
+    "明确瞄准与释放的交互语义、输入冲突、DROP_LOCKED反馈和Game Over后的输入禁用。",
+    "覆盖SAFE/WARNING、AIMING/DROP_LOCKED、暂停与禁用等关键状态，不只设计正常态。",
+    "定义9:16竖屏安全区、横向边界、顶部投放区与HUD避让规则。",
+    "提供关键页面概念与组件状态概念，视觉遵循已批准Art Guide。",
+    "通过Art视觉一致性Review后进入用户审批，不改变核心玩法规则或客户端技术框架。"
+  ],
+  "dependencies": ["GAME-003-ART-DIRECTION", "GAME-004-CORE-TECH-DESIGN"],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "Art Direction v0.1 与 Core Tech Design v0.1 已获用户批准。",
+    "本任务只锁定UI结构、交互和视觉规格；实际Cocos实现由后续Client任务完成。",
+    "用户于 2026-09-17 明确批准 UI v0.1，当前版本记为 USER_APPROVED。"
+  ]
+}

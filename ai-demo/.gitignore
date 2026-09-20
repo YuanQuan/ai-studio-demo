@@ -1,0 +1,13 @@
+# Cocos Creator generated/cache directories
+/library/
+/temp/
+/local/
+/build/
+/profiles/
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/

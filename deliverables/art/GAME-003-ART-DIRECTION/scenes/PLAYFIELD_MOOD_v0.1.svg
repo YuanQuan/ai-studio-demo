@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <rect width="720" height="1280" fill="#FFF3DE"/>
+  <rect x="0" y="0" width="720" height="210" fill="#F8E6C9"/>
+  <circle cx="90" cy="90" r="42" fill="#FFF9EF" opacity=".85"/>
+  <circle cx="640" cy="120" r="58" fill="#F2DDBB" opacity=".8"/>
+  <path d="M0 1030 Q180 995 360 1030 T720 1030 V1280 H0Z" fill="#EBC89D"/>
+  <g opacity=".45" stroke="#D6B892" stroke-width="8" stroke-linecap="round">
+    <path d="M55 275 h90"/><path d="M575 270 h90"/><path d="M90 315 h52"/><path d="M588 310 h58"/>
+  </g>
+
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#4A3D38">PLAYFIELD MOOD · CONCEPT v0.1</text>
+  <text x="360" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7B6A60">soft play-box · low-detail room · danger line remains readable</text>
+
+  <!-- score/next placeholders -->
+  <g font-family="Arial, sans-serif" fill="#4A3D38">
+    <rect x="42" y="122" width="280" height="86" rx="28" fill="#FFF9EF" stroke="#E2CFAE" stroke-width="3"/>
+    <text x="72" y="154" font-size="14" fill="#8A786E">SCORE</text>
+    <text x="72" y="190" font-size="30" font-weight="700">12,480</text>
+    <rect x="510" y="122" width="168" height="86" rx="28" fill="#FFF9EF" stroke="#E2CFAE" stroke-width="3"/>
+    <text x="542" y="154" font-size="14" fill="#8A786E">NEXT</text>
+    <circle cx="635" cy="166" r="25" fill="#9FB7C8" stroke="#5B4A42" stroke-width="4"/>
+    <path d="M615 149 l9 -17 l9 16 M655 149 l-9 -17 l-9 16" fill="#9FB7C8" stroke="#5B4A42" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- play box -->
+  <g>
+    <rect x="72" y="250" width="576" height="820" rx="54" fill="#D9A66F" stroke="#5B4A42" stroke-width="12"/>
+    <rect x="104" y="282" width="512" height="756" rx="38" fill="#FFF9EF" stroke="#C58F5F" stroke-width="5"/>
+    <rect x="122" y="300" width="476" height="720" rx="28" fill="#FFF7E8"/>
+
+    <!-- top spawn zone -->
+    <rect x="122" y="300" width="476" height="112" rx="28" fill="#F7EAD5"/>
+    <text x="360" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#A38D7B">SPAWN / AIM AREA</text>
+    <line x1="360" y1="344" x2="360" y2="385" stroke="#A9B8B1" stroke-width="4" stroke-dasharray="8 8"/>
+    <g transform="translate(360 380)">
+      <circle r="34" fill="#F6C87B" stroke="#5B4A42" stroke-width="5"/>
+      <path d="M-24 -25 l12 -22 l11 20 M24 -25 l-12 -22 l-11 20" fill="#F6C87B" stroke="#5B4A42" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="-11" cy="-4" r="4" fill="#4A3D38"/><circle cx="11" cy="-4" r="4" fill="#4A3D38"/>
+    </g>
+
+    <!-- danger line -->
+    <line x1="134" y1="442" x2="586" y2="442" stroke="#F16F67" stroke-width="5" stroke-linecap="round" stroke-dasharray="18 13"/>
+    <rect x="464" y="420" width="114" height="36" rx="18" fill="#FFF9EF" stroke="#F16F67" stroke-width="3"/>
+    <text x="521" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#D75C56">DANGER</text>
+
+    <!-- stack cats -->
+    <g stroke="#5B4A42" stroke-width="5">
+      <circle cx="219" cy="918" r="63" fill="#9FB7C8"/><circle cx="336" cy="934" r="78" fill="#F3D7A2"/><circle cx="476" cy="921" r="68" fill="#A8CDAF"/>
+      <circle cx="267" cy="816" r="58" fill="#F2B9A7"/><circle cx="389" cy="812" r="66" fill="#D8A8C7"/><circle cx="516" cy="820" r="56" fill="#F6C87B"/>
+      <circle cx="328" cy="714" r="54" fill="#C6B6D8"/><circle cx="438" cy="706" r="61" fill="#9CC8C1"/>
+      <circle cx="377" cy="605" r="49" fill="#F3D7A2"/>
+    </g>
+
+    <!-- small face hints -->
+    <g fill="#4A3D38">
+      <circle cx="204" cy="908" r="5"/><circle cx="234" cy="908" r="5"/>
+      <circle cx="317" cy="923" r="5"/><circle cx="355" cy="923" r="5"/>
+      <circle cx="461" cy="911" r="5"/><circle cx="491" cy="911" r="5"/>
+      <circle cx="254" cy="808" r="4"/><circle cx="280" cy="808" r="4"/>
+      <circle cx="374" cy="802" r="5"/><circle cx="404" cy="802" r="5"/>
+      <circle cx="503" cy="812" r="4"/><circle cx="529" cy="812" r="4"/>
+      <circle cx="315" cy="705" r="4"/><circle cx="341" cy="705" r="4"/>
+      <circle cx="424" cy="697" r="4"/><circle cx="452" cy="697" r="4"/>
+      <circle cx="365" cy="598" r="4"/><circle cx="389" cy="598" r="4"/>
+    </g>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#6D5E56">
+    <rect x="64" y="1100" width="592" height="116" rx="28" fill="#FFF9EF" stroke="#E4D0B4" stroke-width="3"/>
+    <text x="92" y="1135" font-size="16" font-weight="700">Mood notes</text>
+    <text x="92" y="1164" font-size="14">• Background stays quieter than cats and warning UI.</text>
+    <text x="92" y="1188" font-size="14">• Rounded soft-box frame creates an original play-space identity.</text>
+    <text x="92" y="1212" font-size="14">• Danger line is clear but not industrial or aggressive.</text>
+  </g>
+</svg>

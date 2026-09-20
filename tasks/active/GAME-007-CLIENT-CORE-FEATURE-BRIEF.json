@@ -1,0 +1,37 @@
+{
+  "id": "GAME-007-CLIENT-CORE-FEATURE-BRIEF",
+  "title": "核心玩法客户端开工概要",
+  "type": "feature",
+  "owner": "client",
+  "parent": null,
+  "objective": "在正式编码前，根据已批准的核心玩法与技术设计，明确客户端核心玩法实现范围、模块复用、场景/组件结构、平台影响、性能风险、调试入口、测试与交接条件，形成可与QA测试计划一起审批的开发开工包。",
+  "inputs": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "project/ARCHITECTURE.md",
+    "project/ART_GUIDE.md",
+    "agents/client/ROLE.md",
+    "agents/client/FEATURE_BRIEF_TEMPLATE.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/FEATURE_BRIEF_v0.1.md",
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/TECH_REVIEW_v0.1.md",
+    "deliverables/client/GAME-007-CLIENT-CORE-FEATURE-BRIEF/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "明确首个可玩版本的客户端实现范围与明确不做项，不提前引入服务端或未批准Meta系统。",
+    "实现结构映射已批准Tech Design模块，避免物理回调直接合成、UI/VFX回写核心状态或平台API污染玩法。",
+    "明确Cocos场景/节点/组件、配置、调试入口与后续UI/VFX资源接入点。",
+    "明确性能关注项、GC/节点/粒子/Update风险与第一版验证方式。",
+    "声明UI/VFX正式视觉实现必须等待对应用户批准，但核心模块开工包本身可先审批。",
+    "通过Tech Lead Review后进入用户审批；未获用户批准前不得开始正式编码。"
+  ],
+  "dependencies": ["GAME-004-CORE-TECH-DESIGN", "GAME-003-ART-DIRECTION"],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "用户于 2026-09-17 明确批准 Client Feature Brief v0.1，正式核心玩法编码 Gate 已满足。",
+    "本任务只形成编码前Feature Brief，不修改client/实现代码。",
+    "UI/VFX任务并行进行，其USER_APPROVED版本将成为视觉实现正式输入。"
+  ]
+}

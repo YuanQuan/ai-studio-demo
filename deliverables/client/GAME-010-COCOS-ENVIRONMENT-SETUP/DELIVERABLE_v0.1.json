@@ -1,0 +1,35 @@
+{
+  "task_id": "GAME-010-COCOS-ENVIRONMENT-SETUP",
+  "owner": "client",
+  "version": "v0.1",
+  "status": "USER_REVIEW",
+  "artifacts": [
+    "ai-demo/COCOS_VERSION",
+    "ai-demo/assets/scenes/Gameplay.scene",
+    "ai-demo/assets/game/cocos/GameplayBootstrap.ts",
+    "ai-demo/assets/game/cocos/CocosPhysicsFacade.ts",
+    "ai-demo/settings/v2/packages/engine.json",
+    "ai-demo/build/web-desktop/index.html",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/IMPLEMENTATION_REPORT_v0.1.md",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/TECH_REVIEW_v0.1.md",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/RUNTIME_SMOKE_CHECKLIST_v0.1.md"
+  ],
+  "validation": {
+    "creator_version": "3.8.8",
+    "domain_strict_typecheck": "PASS",
+    "domain_tests": "16/16 PASS",
+    "creator_scene_script_registration": "PASS",
+    "web_desktop_build": "PASS",
+    "incremental_build_duration_sec": 20,
+    "required_output_files": "PASS",
+    "http_asset_load_smoke": "PASS",
+    "headless_gpu_visual_interaction": "PARTIAL_ENVIRONMENT_LIMITATION",
+    "tech_review": "PASS_WITH_MANUAL_RUNTIME_CHECK"
+  },
+  "notes": [
+    "当前实际 Creator 工程目录为 ai-demo/。",
+    "build/、library/、temp/ 等 Creator 生成目录不作为 Git 事实源。",
+    "当前可运行视觉使用程序化占位图形，不声明最终生产美术已经完成。",
+    "用户审批前不进入最终 QA 结论。"
+  ]
+}

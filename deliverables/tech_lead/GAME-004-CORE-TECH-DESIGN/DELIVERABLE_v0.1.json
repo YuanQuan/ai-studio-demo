@@ -1,0 +1,57 @@
+{
+  "task_id": "GAME-004-CORE-TECH-DESIGN",
+  "owner": "tech_lead",
+  "summary": "提交核心玩法 Tech Design v0.1 与 Tech Lead Review。方案在 Cocos Creator + TypeScript 基线上拆分 GameplaySession、固定步长时钟、Spawn、PhysicsFacade、MergeResolver、Score、Danger、Config、Events 和 DebugHarness，明确三体/四体合成、防重复消费、2秒危险线、暂停语义、配置校验与QA可观测性，并提出MVP客户端本地权威简化DEC-003。",
+  "artifacts": [
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/TECH_DESIGN_v0.1.md",
+    "deliverables/tech_lead/GAME-004-CORE-TECH-DESIGN/REVIEW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {
+      "criterion": "TECH_DESIGN 将核心玩法拆成边界清晰的模块，并说明依赖方向，避免物理、合成、计分、危险线、UI输入和平台API相互污染。",
+      "result": "PASS",
+      "evidence": "TECH_DESIGN_v0.1.md 第3节定义模块树与依赖方向，UI/VFX/Platform以适配/订阅方式与核心域隔离。"
+    },
+    {
+      "criterion": "明确满足PRD的2D物理方案、固定/半固定更新策略和跨帧率一致性原则，并给出低弹性、稳定堆叠目标的参数调优入口，而不擅自改变产品数值。",
+      "result": "PASS",
+      "evidence": "第4、6节定义1/60固定步、catch-up上限、暂停时钟、PhysicsFacade与可调物理参数；产品数值保持来源于批准PRD。"
+    },
+    {
+      "criterion": "明确合成候选收集、确定性配对、源对象最多消费一次、新生成对象参与后续结算和连续合成的执行顺序，可直接覆盖三体/四体同时接触场景。",
+      "result": "PASS",
+      "evidence": "第8节定义稳定pair key、排序、consumedThisStep、command buffer和新结果猫下一固定步参与合成。"
+    },
+    {
+      "criterion": "明确Current/Next队列、0.25秒+投放排除带解锁、危险线2秒连续计时、暂停/后台冻结与Game Over顺序的技术状态模型。",
+      "result": "PASS",
+      "evidence": "第4、7、10、11节覆盖队列、双条件解锁、simulation-time danger timer、暂停冻结和post-merge Game Over顺序。"
+    },
+    {
+      "criterion": "设计公共玩法配置结构及校验规则，承载等级尺寸、投放权重、合成得分、危险线和调优参数；Product批准的数值作为内容输入，Tech只负责结构与校验。",
+      "result": "PASS",
+      "evidence": "第13节设计cat_level和gameplay_rules概念表、字段类型与校验，并明确Product负责批准值、Tech负责schema。"
+    },
+    {
+      "criterion": "明确核心玩法事件接口、调试/可重复随机种子或等价测试入口、日志/诊断点和后续QA可观测性。",
+      "result": "PASS",
+      "evidence": "第12、14节定义typed domain events、seeded RNG、collider/line/timer overlay、merge event log与调试控制。"
+    },
+    {
+      "criterion": "MVP不引入不必要的服务端、网络、数据库或大型第三方依赖；如需偏离当前项目架构基线，必须形成明确Change Proposal而非静默生效。",
+      "result": "PASS",
+      "evidence": "第2节明确MVP client-local；project/DECISIONS.md新增DEC-003 PROPOSED，等待随Tech Design一起审批。"
+    }
+  ],
+  "assumptions": [
+    "Cocos Creator具体项目版本尚未锁定到本任务；Tech Design通过PhysicsFacade避免将领域语义绑定到具体版本API。",
+    "MVP无需跨设备逐帧确定性回放，只要求玩法语义和时间规则跨平台一致。",
+    "正式.xlsx配置源可在Client开工包阶段按本schema创建，不要求运行时直接解析xlsx。"
+  ],
+  "risks": [
+    "不同平台物理引擎浮点结果可能造成长期轨迹差异；QA应验证规则语义而非长时间坐标完全一致。",
+    "最终碰撞体仍需已批准Art轮廓输入；circle/simple convex选择在实现前联合确认。",
+    "客户端本地成绩不能用于未来可信排行榜或付费奖励，若出现此类需求必须重新设计权威模型。"
+  ],
+  "status": "READY_FOR_REVIEW"
+}

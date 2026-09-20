@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#FFF3DE"/>
+  <text x="60" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#4A3D38">HUD 组件状态概念 v0.1</text>
+  <text x="60" y="92" font-family="sans-serif" font-size="16" fill="#5B4A42" opacity="0.7">用于状态与视觉语言审批，不是最终切图</text>
+
+  <text x="60" y="150" font-family="sans-serif" font-size="22" font-weight="700" fill="#4A3D38">PauseButton</text>
+  <g transform="translate(60,175)">
+    <circle cx="55" cy="55" r="48" fill="#FFF9EF" stroke="#5B4A42" stroke-width="4"/><rect x="40" y="33" width="10" height="44" rx="4" fill="#5B4A42"/><rect x="61" y="33" width="10" height="44" rx="4" fill="#5B4A42"/><text x="55" y="125" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">normal</text>
+  </g>
+  <g transform="translate(200,181) scale(.94)">
+    <circle cx="55" cy="55" r="48" fill="#F7E5C8" stroke="#5B4A42" stroke-width="4"/><rect x="40" y="33" width="10" height="44" rx="4" fill="#5B4A42"/><rect x="61" y="33" width="10" height="44" rx="4" fill="#5B4A42"/>
+  </g><text x="252" y="300" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">pressed</text>
+  <g transform="translate(345,175)" opacity=".4"><circle cx="55" cy="55" r="48" fill="#FFF9EF" stroke="#5B4A42" stroke-width="4"/><rect x="40" y="33" width="10" height="44" rx="4" fill="#5B4A42"/><rect x="61" y="33" width="10" height="44" rx="4" fill="#5B4A42"/></g><text x="400" y="300" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">disabled</text>
+
+  <text x="540" y="150" font-family="sans-serif" font-size="22" font-weight="700" fill="#4A3D38">DangerLine</text>
+  <g transform="translate(540,190)"><line x1="0" y1="40" x2="250" y2="40" stroke="#5B4A42" stroke-width="5" stroke-dasharray="14 12" opacity=".35"/><text x="125" y="85" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">safe</text></g>
+  <g transform="translate(840,190)"><line x1="0" y1="40" x2="250" y2="40" stroke="#F16F67" stroke-width="6" stroke-dasharray="14 12"/><rect x="145" y="6" width="96" height="42" rx="20" fill="#FFF9EF" stroke="#F16F67" stroke-width="3"/><text x="193" y="33" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#F16F67">危险</text><text x="125" y="85" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">warning</text></g>
+
+  <text x="60" y="385" font-family="sans-serif" font-size="22" font-weight="700" fill="#4A3D38">NextCard / Score</text>
+  <g transform="translate(60,415)"><rect width="180" height="125" rx="28" fill="#FFF9EF" stroke="#5B4A42" stroke-width="4"/><text x="90" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#4A3D38">下一只</text><circle cx="90" cy="77" r="28" fill="#F2B36D" stroke="#5B4A42" stroke-width="4"/><path d="M69 58 L76 40 L84 59 M98 58 L107 40 L114 61" fill="#F2B36D" stroke="#5B4A42" stroke-width="4"/></g>
+  <g transform="translate(285,428)"><text x="100" y="20" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#5B4A42">分数</text><text x="100" y="70" text-anchor="middle" font-family="sans-serif" font-size="46" font-weight="700" fill="#4A3D38">2560</text><circle cx="164" cy="48" r="18" fill="#FFD66B" opacity=".55"/></g>
+
+  <text x="600" y="385" font-family="sans-serif" font-size="22" font-weight="700" fill="#4A3D38">AimGuide</text>
+  <g transform="translate(600,420)"><circle cx="70" cy="45" r="34" fill="#9BC9C1" stroke="#5B4A42" stroke-width="4"/><line x1="70" y1="82" x2="70" y2="180" stroke="#85C9B8" stroke-width="4" stroke-dasharray="10 9"/><text x="70" y="215" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">aiming</text></g>
+  <g transform="translate(820,420)" opacity=".45"><circle cx="70" cy="45" r="34" fill="#9BC9C1" stroke="#5B4A42" stroke-width="4"/><text x="70" y="215" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">locked</text></g>
+  <g transform="translate(1020,420)"><circle cx="70" cy="45" r="34" fill="#9BC9C1" stroke="#5B4A42" stroke-width="4" opacity=".18"/><text x="70" y="215" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#5B4A42">hidden</text></g>
+</svg>

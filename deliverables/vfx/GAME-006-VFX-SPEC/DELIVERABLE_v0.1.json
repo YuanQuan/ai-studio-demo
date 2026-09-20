@@ -1,0 +1,19 @@
+{
+  "task_id": "GAME-006-VFX-SPEC",
+  "owner": "vfx",
+  "summary": "提交核心玩法VFX规格v0.1，覆盖合成、连续合成、危险开始/持续/解除与Game Over，定义时序、层级、叠加/打断、资源需求、性能预算与调试验证；Art视觉一致性Review通过，等待用户审批。",
+  "artifacts": [
+    "deliverables/vfx/GAME-006-VFX-SPEC/VFX_SPEC_v0.1.md",
+    "deliverables/vfx/GAME-006-VFX-SPEC/ART_REVIEW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {"criterion":"覆盖单次合成、连续合成、危险警告开始/持续/解除和Game Over等核心触发。","result":"PASS","evidence":"VFX_SPEC_v0.1.md 第3-8节。"},
+    {"criterion":"每类特效明确触发事件、持续时间、层级、位置、可打断/叠加行为和资源需求。","result":"PASS","evidence":"VFX_SPEC_v0.1.md 第3-11节。"},
+    {"criterion":"表现遵循已批准Art Guide，不能遮挡猫咪碰撞可读性或使用全屏频闪。","result":"PASS","evidence":"VFX_SPEC_v0.1.md 第2、5、8节；ART_REVIEW_v0.1.md PASS。"},
+    {"criterion":"给出Web首版性能预算和低端降级策略，不引入大型第三方渲染依赖。","result":"PASS","evidence":"VFX_SPEC_v0.1.md 第10节。"},
+    {"criterion":"通过Art视觉一致性Review后进入用户审批，不改变玩法数值或技术事件语义。","result":"PASS","evidence":"ART_REVIEW_v0.1.md；VFX只消费GameplayEvents。"}
+  ],
+  "assumptions": ["首版优先使用Cocos原生轻量Sprite/Tween/Particle能力。"],
+  "risks": ["连续高频合成若不限制粒子数量可能遮挡棋盘，因此需要软上限和降级。"],
+  "status": "READY_FOR_REVIEW"
+}

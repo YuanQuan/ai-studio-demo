@@ -32,6 +32,9 @@ temp/
 local/
 profiles/
 
+# Rebuildable local Cocos toolchain / optional custom engine source
+.cocos/
+
 # Misc caches
 .cache/
 .tmp/

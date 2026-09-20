@@ -1,0 +1,65 @@
+{
+  "task_id": "GAME-009-CLIENT-CORE-IMPLEMENTATION",
+  "owner": "client",
+  "summary": "完成核心玩法 TypeScript 领域逻辑 v0.1：配置、随机队列、稳定合成、防重复消费、计分、危险线、暂停/重开、固定步与 Debug Contract；严格类型检查通过，自动测试 16/16 PASS。当前仓库/机器无 Cocos Creator 工程环境，因此真实 Scene/Physics/HUD/VFX 接线明确留给后续引擎集成任务。",
+  "artifacts": [
+    "client/assets/game/core/",
+    "client/assets/game/physics/PhysicsFacade.ts",
+    "client/assets/game/debug/DebugHarness.ts",
+    "client/assets/game/input/AimInputAdapter.ts",
+    "client/assets/game/presentation/GameplayPresentation.ts",
+    "client/assets/game/platform/PlatformLifecycleAdapter.ts",
+    "client/tests/core-gameplay.test.ts",
+    "client/tsconfig.json",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/IMPLEMENTATION_REPORT_v0.1.md",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/TECH_REVIEW_v0.1.md"
+  ],
+  "acceptance_results": [
+    {
+      "criterion": "核心 TypeScript 代码通过类型检查，不依赖 Server/网络/数据库或大型第三方运行时库。",
+      "result": "PASS",
+      "evidence": "TypeScript 5.6.3 strict typecheck PASS；领域源码只使用 TypeScript/标准语言能力，无 Server/网络/数据库运行时依赖。"
+    },
+    {
+      "criterion": "GameplayConfig 集中承载并校验已批准核心数值。",
+      "result": "PASS",
+      "evidence": "GameplayConfig.ts 定义 L1-L10 尺寸、L1-L3 权重、分值、0.25s、0.82、2.0s、60Hz 及物理调优字段，并实现完整校验。"
+    },
+    {
+      "criterion": "SpawnController 实现 Current/Next、aimX、双条件解锁与调试入口。",
+      "result": "PASS",
+      "evidence": "SpawnController.ts + AC-01/02/03/04 自动测试 PASS；支持固定 Seed 与 forceNextLevelForDebug。"
+    },
+    {
+      "criterion": "MergeResolver 稳定配对并覆盖同级、异级、L10、三体、四体、连续合成。",
+      "result": "PASS",
+      "evidence": "Pair 去重、level DESC + ID 稳定排序、consumedThisStep；AC-05/06/07/08 自动测试 PASS。"
+    },
+    {
+      "criterion": "ScoreSystem、DangerSystem、GameplaySession 实现计分、救场优先、Game Over、暂停和 Restart。",
+      "result": "PASS",
+      "evidence": "AC-09～AC-14 自动测试 PASS；固定步两阶段保证 post-merge danger 查询。"
+    },
+    {
+      "criterion": "DebugHarness 提供 QA 所需领域证据。",
+      "result": "PASS",
+      "evidence": "支持 step、Active IDs、Spawn/Danger timer、候选/选中 Pair、消费 ID 和中文诊断；可视 Collider/Line overlay 明确待 Cocos 集成。"
+    },
+    {
+      "criterion": "自动测试覆盖 AC-01 至 AC-14 可由领域层验证的规则，并明确 Cocos 集成边界。",
+      "result": "PASS",
+      "evidence": "core-gameplay.test.ts 共 16 项测试全部 PASS；IMPLEMENTATION_REPORT 明确 Cocos Scene/Prefab/Physics/HUD/VFX 尚未完成。"
+    },
+    {
+      "criterion": "提交中文 Implementation Report 与 Tech Lead Review，在用户确认前不进入最终 QA。",
+      "result": "PASS",
+      "evidence": "IMPLEMENTATION_REPORT_v0.1.md 与 TECH_REVIEW_v0.1.md 已存在；Tech Review 结论 PASS / USER_REVIEW。"
+    }
+  ],
+  "risks": [
+    "当前没有 Cocos Creator 工程/CLI/App，真实 Physics API、Scene、Prefab 与 Local Web 构建尚未验证。",
+    "物理手感、Collider 与 Art 轮廓一致性仍需 Cocos 原型调优和 Visual QA。",
+    "当前 npx TypeScript/tsx 仅作为临时开发验证工具；正式 Cocos 工程需锁定自己的工具链。"
+  ],
+  "status": "READY_FOR_REVIEW"
+}

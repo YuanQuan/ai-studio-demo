@@ -1,0 +1,19 @@
+{
+  "task_id": "GAME-008-QA-CORE-TEST-PLAN",
+  "owner": "qa",
+  "summary": "提交核心玩法QA测试计划v0.1，覆盖PRD AC-01至AC-14、Local Web正式环境、功能/边界/暂停/危险线/合成Debug证据、Visual QA、显式不测试项与P0/P1/P2 Gate；等待用户审批。",
+  "artifacts": [
+    "deliverables/qa/GAME-008-QA-CORE-TEST-PLAN/TEST_PLAN_v0.1.md"
+  ],
+  "acceptance_results": [
+    {"criterion":"测试范围可追溯到Core Gameplay PRD AC-01至AC-14及已批准Tech Design。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第3-4节完整映射AC-01至AC-14。"},
+    {"criterion":"明确Local Web为首版正式执行环境，并列出微信/抖音、弱网、性能、广泛回归等默认不测试项。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第2节。"},
+    {"criterion":"定义功能、边界、Debug可观测性与基础Visual QA证据要求。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第4-6节。"},
+    {"criterion":"明确P0/P1/P2 Gate及后续CLIENT_TEST_CASES、视觉证据和TEST_REPORT产物。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第7-8节。"},
+    {"criterion":"说明UI/VFX详细视觉用例将在对应Artifact获批后绑定，不提前把其Draft当作正式测试基线。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第6节明确待绑定基线。"},
+    {"criterion":"TEST_PLAN与Client FEATURE_BRIEF共同获用户批准后才允许正式编码。","result":"PASS","evidence":"TEST_PLAN_v0.1.md 第9节。"}
+  ],
+  "assumptions": ["首轮正式测试环境为Local Web；当前MVP无Server实现范围。"],
+  "risks": ["仅Web验证不足以覆盖未来微信/抖音真机性能与平台差异，发布前需另开专项范围。"],
+  "status": "READY_FOR_REVIEW"
+}

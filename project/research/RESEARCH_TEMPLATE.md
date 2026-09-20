@@ -1,36 +1,36 @@
-# Research — <Topic>
+# 研究报告 — <主题>
 
-- Date:
-- Version: v1
-- Owner: Product Agent
-- Task ID:
+- 日期：
+- 版本：v1
+- Owner：Product Agent
+- Task ID：
 
-## Research Question
+## 研究问题
 
-## Scope
+## 研究范围
 
-## Sources
-| Source | Date | Type | Reliability / Limitation |
+## 来源
+| 来源 | 日期 | 类型 | 可靠性 / 限制 |
 |---|---|---|---|
 
-## Findings
-### Facts
+## 发现
+### 事实
 
-### Inference
+### 推断
 
-## Analysis
+## 分析
 
-## Confidence
-Low / Medium / High — explain why.
+## 置信度
+低 / 中 / 高 —— 并说明原因。
 
-## Product Implications
+## 对产品的影响
 
-## Open Questions
+## 未决问题
 
-## Recommendation
+## 建议
 
-## Risk Notes
-Especially note copyright/IP/compliance/platform-policy risks when applicable.
+## 风险说明
+适用时尤其说明版权 / IP / 合规 / 平台政策风险。
 
-## PRD / Decision Adoption
-None until explicitly referenced by an approved PRD or Project Decision.
+## PRD / Decision 采用状态
+在已批准的 PRD 或项目 Decision 明确引用前，本研究不自动成为正式需求。

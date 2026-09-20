@@ -1,0 +1,57 @@
+{
+  "id": "GAME-010-COCOS-ENVIRONMENT-SETUP",
+  "title": "Cocos Creator 3.8.8 工程环境部署与运行时集成",
+  "type": "client",
+  "owner": "client",
+  "parent": null,
+  "objective": "将当前游戏客户端工程固定到 Cocos Creator 3.8.8，完成真实 Creator 工程、Physics2D、Gameplay Scene、HUD、VFX、Debug 与 Web Desktop 构建接线，并形成可供用户人工运行确认的 MVP 引擎集成版本。",
+  "inputs": [
+    "project/DECISIONS.md",
+    "project/ARCHITECTURE.md",
+    "ai-demo/COCOS_VERSION",
+    "tooling/cocos/README.md",
+    "deliverables/client/GAME-009-CLIENT-CORE-IMPLEMENTATION/IMPLEMENTATION_REPORT_v0.1.md",
+    "project/UI_SPEC.md",
+    "deliverables/vfx/GAME-006-VFX-SPEC/VFX_SPEC_v0.1.md",
+    "tests/TEST_PLAN.md"
+  ],
+  "deliverables": [
+    "ai-demo/COCOS_VERSION",
+    "ai-demo/assets/scenes/Gameplay.scene",
+    "ai-demo/assets/game/cocos/GameplayBootstrap.ts",
+    "ai-demo/assets/game/cocos/CocosPhysicsFacade.ts",
+    "ai-demo/settings/v2/packages/engine.json",
+    "Cocos 2D Physics / HUD / VFX / Debug 真实运行时接线",
+    "Web Desktop 构建与 HTTP 启动烟测证据",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/IMPLEMENTATION_REPORT_v0.1.md",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/TECH_REVIEW_v0.1.md",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/RUNTIME_SMOKE_CHECKLIST_v0.1.md",
+    "deliverables/client/GAME-010-COCOS-ENVIRONMENT-SETUP/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "当前项目和标准新游戏模板均明确锁定 Cocos Creator 3.8.8。",
+    "Cocos Creator 3.8.8 能实际打开 ai-demo/ 工程且资源数据库无阻塞错误。",
+    "领域层通过 PhysicsFacade 接入真实 Cocos 2D Physics，并完成 Gameplay Scene、Collider、Contact Callback 接线。",
+    "已批准 HUD / VFX 至少完成核心玩法运行时接线。",
+    "Web Desktop Builder 完成，启动场景、脚本和必要输出文件均可解析。",
+    "真实 GPU 下可操作 Gameplay 场景由用户按 RUNTIME_SMOKE_CHECKLIST_v0.1.md 在 USER_REVIEW 中人工确认。"
+  ],
+  "dependencies": [
+    "GAME-004-CORE-TECH-DESIGN",
+    "GAME-005-UI-HUD-SPEC",
+    "GAME-006-VFX-SPEC",
+    "GAME-007-CLIENT-CORE-FEATURE-BRIEF",
+    "GAME-008-QA-CORE-TEST-PLAN",
+    "GAME-009-CLIENT-CORE-IMPLEMENTATION"
+  ],
+  "status": "USER_REVIEW",
+  "approval": "APPROVAL",
+  "notes": [
+    "用户已明确选择 Cocos Creator 3.8.8 作为当前游戏与未来 Cocos 新游戏默认版本。",
+    "用户已成功安装并首开 Creator 3.8.8，实际 Creator 工程目录确认为 ai-demo/。",
+    "Creator Builder 已完成 Web Desktop 构建；最终增量构建耗时 20 秒，必要输出文件齐全。",
+    "领域 strict 类型检查 PASS，自动测试 16/16 PASS，Tech Lead Review 结论 PASS WITH MANUAL RUNTIME CHECK。",
+    "无头 Chrome 已完成 HTTP/脚本加载烟测，但 macOS 无头 GPU / DisplayLink 环境无法替代真实 GPU 画面和手感确认。",
+    "当前视觉为程序化运行时原型，不声明最终生产美术资产已完成。"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "GAME-008-QA-CORE-TEST-PLAN",
+  "title": "核心玩法 QA 测试计划",
+  "type": "test",
+  "owner": "qa",
+  "parent": null,
+  "objective": "在正式编码前，基于已批准PRD、Art Direction与Tech Design定义核心玩法测试范围、目标环境、功能/边界/视觉证据要求、显式不测试项、严重级别与后续用例产出计划，并与Client Feature Brief组成开发开工包。",
+  "inputs": [
+    "deliverables/product/GAME-002-CORE-GAMEPLAY-PRD/CORE_GAMEPLAY_PRD_v0.1.md",
+    "project/ART_GUIDE.md",
+    "project/ARCHITECTURE.md",
+    "agents/qa/ROLE.md",
+    "agents/qa/TEST_PLAN_TEMPLATE.md",
+    "rules/artifact_contract.md"
+  ],
+  "deliverables": [
+    "deliverables/qa/GAME-008-QA-CORE-TEST-PLAN/TEST_PLAN_v0.1.md",
+    "deliverables/qa/GAME-008-QA-CORE-TEST-PLAN/DELIVERABLE_v0.1.json"
+  ],
+  "acceptance": [
+    "测试范围可追溯到Core Gameplay PRD AC-01至AC-14及已批准Tech Design。",
+    "明确Local Web为首版正式执行环境，并列出微信/抖音、弱网、性能、广泛回归等默认不测试项。",
+    "定义功能、边界、Debug可观测性与基础Visual QA证据要求。",
+    "明确P0/P1/P2 Gate及后续CLIENT_TEST_CASES、视觉证据和TEST_REPORT产物。",
+    "说明UI/VFX详细视觉用例将在对应Artifact获批后绑定，不提前把其Draft当作正式测试基线。",
+    "TEST_PLAN与Client FEATURE_BRIEF共同获用户批准后才允许正式编码。"
+  ],
+  "dependencies": ["GAME-004-CORE-TECH-DESIGN", "GAME-003-ART-DIRECTION"],
+  "status": "DONE",
+  "approval": "APPROVAL",
+  "notes": [
+    "用户于 2026-09-17 明确批准 QA Test Plan v0.1，正式核心玩法开发/测试 Gate 已满足。",
+    "首版无Server实现范围，因此不创建Server Test Cases；如后续范围改变需重新更新测试计划。",
+    "UI/VFX任务并行，详细视觉验收点在其批准后加入执行用例。"
+  ]
+}

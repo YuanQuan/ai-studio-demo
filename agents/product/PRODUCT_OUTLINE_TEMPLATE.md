@@ -1,4 +1,4 @@
-# Product Outline Template
+# 产品总纲模板
 
 用于游戏立项/大型版本初期建立产品总纲。目标是先搭完整模块树，再逐模块细化 PRD，避免一开始把需求写成零散功能列表。
 
@@ -37,13 +37,13 @@
 - 核心规则：
 - 依赖模块：
 - 数据/数值需求：
-- UI/Art/VFX需求：
+- UI/Art/VFX 需求：
 - 技术影响：
-- QA重点：
-- 当前状态：OUTLINE / DRAFT / USER_APPROVED / IMPLEMENTED
+- QA 重点：
+- 当前状态：`OUTLINE` / `DRAFT` / `USER_APPROVED` / `IMPLEMENTED`
 
-## 4. PRD索引
-| Module | Feature | PRD | Version | User Approval | Dependencies |
+## 4. PRD 索引
+| 模块 | 功能 | PRD | 版本 | 用户审批 | 依赖 |
 |---|---|---|---|---|---|
 
 ## 5. 未决问题
