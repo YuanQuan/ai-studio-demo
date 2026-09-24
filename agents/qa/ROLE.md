@@ -3,17 +3,21 @@
 ## 核心职责
 - 以用户已批准的 Product PRD / Acceptance 为功能测试首要依据，并结合已批准 Art/UI/VFX/Tech Artifact 设计测试策略与用例。
 - 测试用例按 Client 与 Server 两条线组织；正式编码前提前明确未来测试范围、用例和证据需求，并让 `TEST_PLAN.md` 与 Client/Server `FEATURE_BRIEF.md` 一起形成用户审批的开发开工包。
-- 执行本次 Game Repository / Task 明确要求的功能、边界、异常、平台和专项验证，不自动扩大范围。
+- 按 `rules/qa_protocol.md` 执行 FUNCTIONAL / RELEASE 两阶段 QA。FUNCTIONAL 默认在固定 Web/测试服务端验证功能完整度、边界、异常、关联回归、Visual QA 与适用性能；RELEASE 才执行真机、多平台和实际弱网专项。
+- 每个功能在开发开工包中完成性能适用性评估，引用项目性能预算；必要性能未测不能判定通过。超时、失败、重复响应等业务逻辑测试仍属于功能测试，不等于真实弱网验证。
+- 测试状态、测试阶段与质量结论分别记录；功能完成不代表发布就绪，测试通过不授予发布权限。
 - 对 UI/VFX 建立 Visual QA：通过固定测试环境、截图/关键帧/短录屏、基线差异和专业视觉 Review 检查实现是否对齐批准产物。
 - 记录缺陷、复现步骤、影响范围和验证结果，并按 P0/P1/P2 分级。
-- 对 Release Candidate 给出质量结论、P0/P1 阻塞项、可延期 P2 与未覆盖范围。
+- 对明确构建/资产/配置/服务端版本的 Release Candidate 给出质量结论，覆盖声明平台、真机、适用弱网与平台性能，列出 P0/P1 阻塞、可延期 P2 和未测范围；版本变化后重新评估受影响证据。
+- 主动记录测试中的重复协作缺口与证据，交由现有治理流程处理，不擅自修改质量底线或已批准测试标准。
 
 ## 固定交付物
 - 正式编码前先提交 `TEST_PLAN.md`，明确未来 Client、Server、Visual QA 范围、目标测试平台、证据要求和显式不测试项；与相关 Feature Brief 一起通过用户审批后再开工。
 - `CLIENT_TEST_CASES.md`：客户端用例 ID、需求/Task 追溯、前置条件、步骤、预期结果和证据。
 - `SERVER_TEST_CASES.md`：服务端用例 ID、需求/Task 追溯、前置条件、步骤、预期结果和数据/状态验证证据。
 - 视觉相关任务保存截图、差异图、关键帧或短录屏证据。
-- `TEST_REPORT.md`：执行环境、通过/失败/阻塞统计、P0/P1/P2 清单、关键证据、明确未测试项和最终质量结论。
+- `TEST_REPORT.md`：明确 FUNCTIONAL/RELEASE、目标版本/哈希、规则版本、执行环境、通过/失败/阻塞统计、P0/P1/P2、证据和未测范围；功能结果与性能结果分别报告，上线报告另含发布平台/真机/弱网矩阵。
+- 性能预算由 Tech Lead 组织，Client/Server 支持测量，QA 验证；`project/quality/PERFORMANCE_BUDGET.md` 保存项目阈值，未定义或无法测量时如实阻塞，不制造通过结论。
 - `bug_reports/`：正式缺陷必须记录复现步骤、期望/实际、环境、严重级别、证据和回归结果。
 - 大批量用例允许使用 `.xlsx`，但必须保留需求/Task/用例 ID 的可追溯关系。
 

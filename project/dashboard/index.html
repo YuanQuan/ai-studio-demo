@@ -25,8 +25,19 @@
     <div class="card"><div class="muted">开放任务线</div><div class="n info">1</div><small class="muted">GAME-010</small></div>
     <div class="card"><div class="muted">待用户审批</div><div class="n warn">1</div><small class="muted">Cocos 运行时集成 v0.1</small></div>
     <div class="card"><div class="muted">已完成任务线</div><div class="n ok">9</div><small class="muted">GAME-001 → GAME-009</small></div>
-    <div class="card"><div class="muted">当前阻塞</div><div class="n ok">0</div><small class="muted">Creator 环境已解除</small></div>
+    <div class="card"><div class="muted">游戏任务阻塞</div><div class="n ok">0</div><small class="muted">组织改造阻塞另见下方</small></div>
   </div>
+
+  <section class="card" style="margin-bottom:14px" aria-labelledby="workflow-upgrade-status">
+    <h2 id="workflow-upgrade-status" class="warn">工作流改造：部分应用，工具阻塞</h2>
+    <p><strong>PARTIAL_BLOCKED</strong>：两阶段 QA 与会话恢复设计已保存，QA 职责已同步；自主调优授权与顶层入口写入被工具拦截。模板 QA 约束已改，当前游戏仍旧版，回退也未成功。新工作流尚未完整启用。</p>
+    <p class="muted">本轮没有修改 GAME-010 的待审批状态，没有补记测试通过，没有执行 Git 操作。不要把当前模板视为已验证的新发布版本。</p>
+    <div class="artifact">
+      <button class="artifact-action" data-preview="governance/IMPLEMENTATION_STATUS.md" data-label="工作流改造实施与阻塞记录">实施与阻塞记录</button>
+      <button class="artifact-action" data-preview="project/SESSION_STATE.md" data-label="下一会话恢复索引">会话恢复索引</button>
+      <span class="artifact-path">governance/IMPLEMENTATION_STATUS.md · project/SESSION_STATE.md</span>
+    </div>
+  </section>
 
   <section class="card">
     <h2>当前审批 Gate</h2>
